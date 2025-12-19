@@ -407,6 +407,11 @@ TerraformingMarsTracker.prototype.addGame = function() {
         coloniesDisplay.classList.add('hidden');
     }
     
+    // 플레이어 기업 선택 정보도 초기화
+    this.players.forEach(player => {
+        player.selectedCorporation = null;
+    });
+    
     // 옵션 다시 업데이트
     this.updateAvailableOptions();
 
