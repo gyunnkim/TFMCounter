@@ -420,7 +420,7 @@ TerraformingMarsTracker.prototype.addGame = function() {
     this.isResetting = true;
     
     // 선택된 맵도 초기화
-    this.selectedMap = null;
+    this.selectedMap = '';
     
     // 플레이어 기업 선택 정보 먼저 초기화
     this.players.forEach(player => {
@@ -428,6 +428,19 @@ TerraformingMarsTracker.prototype.addGame = function() {
         // 더 확실하게 빈 문자열로도 설정
         player.selectedCorporation = '';
     });
+
+    // 플레이어 순서도 초기화 (저장 후 이전 순서가 복원되는 것 방지)
+    if (typeof this.resetPlayerOrder === 'function') {
+        this.resetPlayerOrder();
+    }
+
+    // 초기화된 상태를 서버에도 즉시 반영해서 주기적 동기화가 이전 값으로 덮어쓰지 못하게 함
+    if (typeof this.syncToServer === 'function') {
+        this.syncToServer('postAddGameReset', {
+            selectedMap: this.selectedMap,
+            players: this.players
+        });
+    }
     
     // 강제로 게임 입력 폼을 다시 생성
     setTimeout(() => {

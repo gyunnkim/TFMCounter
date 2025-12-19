@@ -317,7 +317,8 @@ TerraformingMarsTracker.prototype.syncToServer = function(type, data) {
     const fullData = {
         players: this.players,
         games: this.games,
-        selectedMap: this.selectedMap || 'THARSIS' // 기본값 설정
+        // ''(빈 문자열)도 유효한 "초기화 상태"로 취급해야 하므로 || 를 쓰면 안 됨
+        selectedMap: (this.selectedMap === undefined || this.selectedMap === null) ? 'THARSIS' : this.selectedMap // 기본값 설정
     };
     
     console.log('서버로 데이터 전송:', type, fullData);
