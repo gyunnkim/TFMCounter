@@ -2,11 +2,17 @@
 TerraformingMarsTracker.prototype.initializeSync = function() {
     // 현재 호스트에 따라 서버 URL 결정
     const currentHost = window.location.hostname;
-    const currentPort = window.location.port || '3010';
+    const currentPort = window.location.port;
+    
     if (currentHost === 'localhost' || currentHost === '127.0.0.1') {
-        this.syncServerUrl = `http://localhost:${currentPort}`;
+        // 로컬 개발 환경
+        this.syncServerUrl = `http://localhost:${currentPort || '3000'}`;
+    } else if (currentHost.includes('vercel.app')) {
+        // Vercel 배포 환경 - HTTPS 사용, 포트 없음
+        this.syncServerUrl = `https://${currentHost}`;
     } else {
-        this.syncServerUrl = `http://${currentHost}:${currentPort}`;
+        // 기타 환경
+        this.syncServerUrl = `${window.location.protocol}//${currentHost}${currentPort ? ':' + currentPort : ''}`;
     }
     console.log('동기화 서버 URL:', this.syncServerUrl);
     this.lastSyncTimestamp = null;
