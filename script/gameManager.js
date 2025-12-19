@@ -46,7 +46,7 @@ TerraformingMarsTracker.prototype.generateGameInputs = function() {
                 <input type="number" id="forest${player.id}" placeholder="숲" min="0" max="20" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
                 <input type="number" id="city${player.id}" placeholder="도시" min="0" max="30" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
                 <input type="number" id="congress${player.id}" placeholder="의회" min="0" max="20" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
-                <input type="number" id="cards${player.id}" placeholder="카드점수" min="0" max="50" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
+                <input type="number" id="cards${player.id}" placeholder="카드점수" min="-50" max="50" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
             </div>
             <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 10px;">
                 <input type="number" id="totalScore${player.id}" placeholder="총점" readonly style="padding: 8px; border: 2px solid #cbd5e0; border-radius: 6px; background-color: #f7fafc; font-weight: bold; flex: 1;">
@@ -552,6 +552,13 @@ TerraformingMarsTracker.prototype.calculateBadges = function(gameResults) {
     // 각 결과에 배지 배열 초기화
     gameResults.forEach(result => {
         result.badges = [];
+    });
+
+    // 0. 무법자 배지 (카드점수 음수)
+    gameResults.forEach(result => {
+        if (result.scoreBreakdown && typeof result.scoreBreakdown.cards === 'number' && result.scoreBreakdown.cards < 0) {
+            result.badges.push({ name: '무법자', icon: '🤠', color: '#805ad5' });
+        }
     });
 
     // 1. 테라포머 배지 (TR 가장 높으면서 50점 넘음)
