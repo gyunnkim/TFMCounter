@@ -145,7 +145,8 @@ TerraformingMarsTracker.prototype.generateGameInputs = function() {
         });
         
         // 저장된 기업이 있으면 복원 (게임 결과 추가 후에는 복원하지 않음)
-        if (player.selectedCorporation && !this.isResetting) {
+        // 리셋 중이거나 기업이 null/empty인 경우 복원하지 않음
+        if (player.selectedCorporation && !this.isResetting && player.selectedCorporation !== null && player.selectedCorporation !== '') {
             corpSelect.value = player.selectedCorporation;
         }
     });
@@ -418,9 +419,14 @@ TerraformingMarsTracker.prototype.addGame = function() {
     // 리셋 플래그 설정
     this.isResetting = true;
     
+    // 선택된 맵도 초기화
+    this.selectedMap = null;
+    
     // 플레이어 기업 선택 정보 먼저 초기화
     this.players.forEach(player => {
         player.selectedCorporation = null;
+        // 더 확실하게 빈 문자열로도 설정
+        player.selectedCorporation = '';
     });
     
     // 강제로 게임 입력 폼을 다시 생성
