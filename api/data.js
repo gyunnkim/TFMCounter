@@ -75,11 +75,17 @@ export default async function handler(req, res) {
             }
             
             // Redis에 데이터 저장
+            let normalizedSelectedMap = newData.selectedMap;
+            // 과거/클라이언트 호환: 객체({value,name,...})면 value만 저장
+            if (normalizedSelectedMap && typeof normalizedSelectedMap === 'object' && 'value' in normalizedSelectedMap) {
+                normalizedSelectedMap = normalizedSelectedMap.value;
+            }
+
             const dataToSave = {
                 players: newData.players,
                 games: newData.games,
                 // ''(빈 문자열)도 유효한 "선택 안 함" 상태로 취급
-                selectedMap: (newData.selectedMap === undefined || newData.selectedMap === null) ? 'THARSIS' : newData.selectedMap,
+                selectedMap: (normalizedSelectedMap === undefined || normalizedSelectedMap === null) ? 'THARSIS' : normalizedSelectedMap,
                 selectedColonies: Array.isArray(newData.selectedColonies) ? newData.selectedColonies : []
             };
             
