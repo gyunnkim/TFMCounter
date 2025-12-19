@@ -626,7 +626,7 @@ TerraformingMarsTracker.prototype.randomizeMap = function() {
     const selectedMap = allMaps[randomIndex];
 
     // 맵 선택 결과를 바로 적용
-    this.applySelectedMap(selectedMap);
+    this.applySelectedMap(selectedMap.value);
 };
 
 TerraformingMarsTracker.prototype.showMapSelection = function(selectedMap, allMaps) {
@@ -865,6 +865,11 @@ TerraformingMarsTracker.prototype.showMapSelection = function(selectedMap, allMa
 };
 
 TerraformingMarsTracker.prototype.applySelectedMap = function(mapValue) {
+    // 과거 호출부 호환: 객체({value,name,...})가 들어오면 value만 사용
+    if (mapValue && typeof mapValue === 'object' && 'value' in mapValue) {
+        mapValue = mapValue.value;
+    }
+
     // 맵 드롭다운 업데이트 (숨겨진 select)
     const mapSelect = document.getElementById('mapSelect');
     if (mapSelect) {
