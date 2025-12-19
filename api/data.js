@@ -1,4 +1,18 @@
-import { kv } from '@vercel/kv';
+import { createClient } from 'redis';
+
+// Redis 클라이언트 생성
+let redis;
+const getRedisClient = async () => {
+    if (!redis) {
+        redis = createClient({
+            url: process.env.REDIS_URL
+        });
+        
+        redis.on('error', (err) => console.log('Redis Client Error', err));
+        await redis.connect();
+    }
+    return redis;
+};
 
 // 데이터 키 상수
 const GAME_DATA_KEY = 'terraforming_mars_data';
@@ -24,10 +38,13 @@ export default async function handler(req, res) {
     }
     
     try {
+        const client = await getRedisClient();
+        
         if (req.method === 'GET') {
             // 데이터 조회
-            const gameData = await kv.get(GAME_DATA_KEY) || defaultGameData;
-            const lastUpdated = await kv.get(LAST_UPDATED_KEY) || new Date().toISOString();
+            const gameDataStr = await client.get(GAME_DATA_KEY);
+            const gameData = gameDataStr ? JSON.parse(gameDataStr) : defaultGameData;
+            const lastUpdated = await client.get(LAST_UPDATED_KEY) || new Date().toISOString();
             
             console.log(`데이터 조회: ${gameData.players?.length || 0}명 플레이어, ${gameData.games?.length || 0}개 게임`);
             
@@ -63,8 +80,8 @@ export default async function handler(req, res) {
                 selectedMap: newData.selectedMap || 'THARSIS'
             };
             
-            await kv.set(GAME_DATA_KEY, dataToSave);
-            await kv.set(LAST_UPDATED_KEY, timestamp);
+            await client.set(GAME_DATA_KEY, JSON.stringify(dataToSave));
+            await client.set(LAST_UPDATED_KEY, timestamp);
             
             console.log(`데이터 저장 완료: ${newData.players.length}명 플레이어, ${newData.games.length}개 게임`);
             

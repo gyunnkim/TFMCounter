@@ -1,4 +1,18 @@
-import { kv } from '@vercel/kv';
+import { createClient } from 'redis';
+
+// Redis 클라이언트 생성
+let redis;
+const getRedisClient = async () => {
+    if (!redis) {
+        redis = createClient({
+            url: process.env.REDIS_URL
+        });
+        
+        redis.on('error', (err) => console.log('Redis Client Error', err));
+        await redis.connect();
+    }
+    return redis;
+};
 
 const LAST_UPDATED_KEY = 'terraforming_mars_last_updated';
 const GAME_DATA_KEY = 'terraforming_mars_data';
@@ -17,16 +31,18 @@ export default async function handler(req, res) {
     
     if (req.method === 'GET') {
         try {
+            const client = await getRedisClient();
             const { timestamp } = req.query;
-            const lastUpdated = await kv.get(LAST_UPDATED_KEY);
+            const lastUpdated = await client.get(LAST_UPDATED_KEY);
             
             // 타임스탬프 비교하여 업데이트 필요 여부 확인
             const needsUpdate = !timestamp || timestamp !== lastUpdated;
             
             let data = null;
             if (needsUpdate) {
-                data = await kv.get(GAME_DATA_KEY);
-                if (data) {
+                const gameDataStr = await client.get(GAME_DATA_KEY);
+                if (gameDataStr) {
+                    data = JSON.parse(gameDataStr);
                     data.lastUpdated = lastUpdated;
                 }
             }
