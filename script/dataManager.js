@@ -1,0 +1,168 @@
+// 레거시 데이터 관리 기능
+TerraformingMarsTracker.prototype.exportData = function() {
+    if (this.games.length === 0) {
+        alert('저장할 게임 데이터가 없습니다.');
+        return;
+    }
+
+    // 서버 API를 통해 games 디렉토리에 파일 저장
+    fetch(`${this.syncServerUrl}/api/export`)
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                alert(`✅ 데이터 내보내기 완료!\n\n파일명: ${result.filename}\n게임 수: ${result.gameCount}게임\n저장 위치: games 디렉토리`);
+                
+                // 데이터 내보내기 후 현재 데이터 초기화 여부 확인
+                if (confirm('데이터를 games 디렉토리에 저장했습니다. 현재 게임 데이터를 초기화하시겠습니까?')) {
+                    this.clearCurrentData();
+                    alert('현재 데이터가 초기화되었습니다. 새로운 게임을 시작할 수 있습니다.');
+                }
+            } else {
+                alert(`❌ 데이터 내보내기 실패: ${result.message || '알 수 없는 오류'}`);
+            }
+        })
+        .catch(error => {
+            console.error('데이터 내보내기 오류:', error);
+            alert(`❌ 데이터 내보내기 중 오류가 발생했습니다: ${error.message}`);
+        });
+};
+
+TerraformingMarsTracker.prototype.importData = function(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const data = JSON.parse(e.target.result);
+            
+            // 레거시 데이터 형식 확인
+            if (data.players && data.games) {
+                const gameCount = data.games.length;
+                const playerCount = data.players.length;
+                const exportDate = data.exportDate ? new Date(data.exportDate).toLocaleDateString() : '알 수 없음';
+                
+                const message = `레거시 데이터 정보:
+- 플레이어 수: ${playerCount}명
+- 게임 수: ${gameCount}게임
+- 저장 날짜: ${exportDate}
+
+현재 데이터와 병합하시겠습니까?`;
+                
+                if (confirm(message)) {
+                    // 기존 데이터와 병합
+                    this.mergeLegacyData(data);
+                    alert('레거시 데이터를 성공적으로 불러왔습니다!');
+                }
+            } else {
+                alert('올바르지 않은 레거시 데이터 형식입니다.');
+            }
+        } catch (error) {
+            alert('레거시 파일을 읽는 중 오류가 발생했습니다.');
+        }
+    };
+    reader.readAsText(file);
+    
+    // 파일 입력 초기화
+    event.target.value = '';
+};
+
+TerraformingMarsTracker.prototype.saveData = function() {
+    const data = {
+        players: this.players,
+        games: this.games
+    };
+    localStorage.setItem('terraformingMarsData', JSON.stringify(data));
+};
+
+TerraformingMarsTracker.prototype.loadData = function() {
+    const savedData = localStorage.getItem('terraformingMarsData');
+    if (savedData) {
+        try {
+            const data = JSON.parse(savedData);
+            this.players = data.players || [];
+            this.games = data.games || [];
+            
+            if (this.players.length > 0) {
+                document.getElementById('player-setup').classList.add('hidden');
+                document.getElementById('game-input').classList.remove('hidden');
+                // generateGameInputs 호출 전에 잠시 대기
+                setTimeout(() => {
+                    this.generateGameInputs();
+                }, 100);
+            }
+            
+            this.updateRanking();
+            this.updateHistory();
+        } catch (error) {
+            console.error('데이터 로드 중 오류:', error);
+        }
+    }
+};
+
+// 현재 데이터 초기화
+TerraformingMarsTracker.prototype.clearCurrentData = function() {
+    this.players = [];
+    this.games = [];
+    
+    // UI 초기화
+    document.getElementById('player-setup').classList.remove('hidden');
+    document.getElementById('game-input').classList.add('hidden');
+    
+    // 로컬 스토리지 초기화
+    this.saveData();
+    
+    // 서버 동기화 (빈 데이터로)
+    if (this.syncToServer) {
+        this.syncToServer('clearData', {});
+    }
+    
+    // UI 업데이트
+    this.updateRanking();
+    this.updateHistory();
+};
+
+// 레거시 데이터 병합
+TerraformingMarsTracker.prototype.mergeLegacyData = function(legacyData) {
+    // 플레이어 데이터 병합 (중복 방지)
+    const existingPlayerNames = this.players.map(p => p.name);
+    const newPlayers = legacyData.players.filter(p => !existingPlayerNames.includes(p.name));
+    
+    // 새로운 플레이어들의 ID 재할당
+    let maxId = this.players.length > 0 ? Math.max(...this.players.map(p => p.id)) : 0;
+    newPlayers.forEach(player => {
+        player.id = ++maxId;
+    });
+    
+    this.players = [...this.players, ...newPlayers];
+    
+    // 게임 데이터 병합 (ID 재할당)
+    let maxGameId = this.games.length > 0 ? Math.max(...this.games.map(g => g.id)) : 0;
+    const newGames = legacyData.games.map(game => ({
+        ...game,
+        id: ++maxGameId
+    }));
+    
+    this.games = [...this.games, ...newGames];
+    
+    // 플레이어 통계 재계산
+    this.recalculateAllStats();
+    
+    // UI 업데이트
+    if (this.players.length > 0) {
+        document.getElementById('player-setup').classList.add('hidden');
+        document.getElementById('game-input').classList.remove('hidden');
+        setTimeout(() => {
+            this.generateGameInputs();
+        }, 100);
+    }
+    
+    this.updateRanking();
+    this.updateHistory();
+    this.saveData();
+    
+    // 서버 동기화
+    if (this.syncToServer) {
+        this.syncToServer('mergeLegacy', { players: this.players, games: this.games });
+    }
+};

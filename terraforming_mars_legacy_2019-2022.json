@@ -1,0 +1,5080 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "강보석",
+      "games": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "SATURN SYSTEM",
+          "score": 98,
+          "megacredits": 37,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "STORMCRAFT",
+          "score": 63,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "THARSIS",
+          "score": 139,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "VALLEY TRUST",
+          "score": 82,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "CELESTIC",
+          "score": 100,
+          "megacredits": 27,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "VALLEY TRUST",
+          "score": 94,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "UNMI",
+          "score": 99,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "VIRON",
+          "score": 123,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "MANUTECH",
+          "score": 66,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "PHOBLOG",
+          "score": 118,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "POSEIDON",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "Thorgate",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "POSEIDON",
+          "score": 140,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "Terractor",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "STORMCRAFT",
+          "score": 145,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "Helion",
+          "score": 115,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "Msi",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "INTERPLANETARY CINEMATICS",
+          "score": 152,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "MANUTECH",
+          "score": 108,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "STORMCRAFT",
+          "score": 102,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 99,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "ARIDOR",
+          "score": 126,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "SATURN SYSTEMS",
+          "score": 103,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "POINT LUNA",
+          "score": 68,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "POINT LUNA",
+          "score": 82,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "THORGATE",
+          "score": 69,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "INVENTRIX",
+          "score": 57,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "VITOR",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "THARSIS",
+          "score": 95,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "VITOR",
+          "score": 105,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "THORGATE",
+          "score": 68,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "SATURN SYSTEMS",
+          "score": 103,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "PRISTAR",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "TERRALABS",
+          "score": 82,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "TERRALABS",
+          "score": 60,
+          "megacredits": 53,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "CELESTiC",
+          "score": 99,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "THARSIS",
+          "score": 80,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "VALLEY TRUST",
+          "score": 105,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "ROBINSON INDUSTRIES",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "Msi",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "TERRACTOR",
+          "score": 144,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "Msi",
+          "score": 79,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "ROBINSON INDUSTRIES",
+          "score": 62,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "LAKEFRONT RESORTS",
+          "score": 92,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "Msi",
+          "score": 74,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "TERRALABS",
+          "score": 70,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "CELESTiC",
+          "score": 104,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "CELESTiC",
+          "score": 65,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "Cheung Shing Mars",
+          "score": 62,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "INVENTRIX",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "Manutech",
+          "score": 116,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "UNMI",
+          "score": 61,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "ARCADIAN COMMUNITIES",
+          "score": 69,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "INVENTRIX",
+          "score": 72,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "ROBINSON INDUSTRIES",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "Cheung Shing Mars",
+          "score": 98,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "APHRODITE",
+          "score": 66,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "credicor",
+          "score": 77,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "ViTOR",
+          "score": 63,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "MANUTECH",
+          "score": 113,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "CELESTIC",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "SATURN SYSTEMS",
+          "score": 116,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "VALLEY TRUST",
+          "score": 80,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "Septem Tribus",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "TERRALABS",
+          "score": 72,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "INTERPLANETARY CINEMATICS",
+          "score": 74,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "TERRACTOR",
+          "score": 65,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "helion",
+          "score": 80,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "CELESTIC",
+          "score": 98,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "THORGATE",
+          "score": 79,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "MANUTECH",
+          "score": 117,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "ViTOR",
+          "score": 128,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "THARSIS",
+          "score": 95,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "MINING GUILD",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "CELESTIC",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "PHILARES",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "UNMI",
+          "score": 80,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 116,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "PHOBLOG",
+          "score": 66,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "VIRON",
+          "score": 116,
+          "megacredits": 0,
+          "rank": 1
+        }
+      ],
+      "stats": {
+        "totalGames": 81,
+        "totalScore": 7364,
+        "averageScore": 90.9,
+        "wins": 24,
+        "seconds": 20,
+        "thirds": 37,
+        "fourths": 0
+      }
+    },
+    {
+      "id": 2,
+      "name": "김기훈",
+      "games": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "VIRON",
+          "score": 98,
+          "megacredits": 21,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "VITOR",
+          "score": 81,
+          "megacredits": 27,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "POINT LUNA",
+          "score": 198,
+          "megacredits": 113,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "ECOLINE",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "Terractor",
+          "score": 126,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "MANUTECH",
+          "score": 100,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "helion",
+          "score": 106,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "MSi",
+          "score": 148,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "UNMI",
+          "score": 59,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 135,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "ARIDOR",
+          "score": 114,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "POINT LUNA",
+          "score": 67,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "Cheungshing MARS",
+          "score": 123,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "SATURN SYSTEM",
+          "score": 129,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "THORGATE",
+          "score": 165,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "Msi",
+          "score": 150,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "credicor",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "ARKLIGHT",
+          "score": 138,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "Msi",
+          "score": 129,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "VIRON",
+          "score": 117,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "THORGATE",
+          "score": 90,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "ROBINSON INDUSTRIES",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "Msi",
+          "score": 116,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "STORMCRAFT",
+          "score": 84,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "APHRODITE",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "VALLEY TRUST",
+          "score": 64,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "Cheung Shing Mars",
+          "score": 63,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "THORGATE",
+          "score": 95,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "INTERPLANETARY CINEMATICS",
+          "score": 55,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "Septem Tribus",
+          "score": 75,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "THARSIS",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "mons INSURANCE",
+          "score": 94,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "APHRODITE",
+          "score": 73,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "THARSIS",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "INTERPLANETARY CINEMATICS",
+          "score": 60,
+          "megacredits": 49,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "POINT LUNA",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "Msi",
+          "score": 106,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "LAKEFRONT RESORTS",
+          "score": 87,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "credicor",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "ROBINSON INDUSTRIES",
+          "score": 101,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "helion",
+          "score": 116,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "mons INSURANCE",
+          "score": 72,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "ARCADIAN COMMUNITIES",
+          "score": 70,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "FACTORUM",
+          "score": 110,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "PRISTAR",
+          "score": 112,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "UNMI",
+          "score": 75,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "MINING GUILD",
+          "score": 111,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "PHILARES",
+          "score": 72,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "TERRALABS",
+          "score": 79,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "Cheung Shing Mars",
+          "score": 101,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "Vitor",
+          "score": 61,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "MINING GUILD",
+          "score": 61,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "mons INSURANCE",
+          "score": 58,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "TERRACTOR",
+          "score": 77,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "MSI",
+          "score": 90,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "LAKEFRONT RESORTS",
+          "score": 104,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "PHILARES",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "THORGATE",
+          "score": 75,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "ECOLINE",
+          "score": 89,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "VALLEY TRUST",
+          "score": 58,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "PHOBLOG",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "SPLICE",
+          "score": 91,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "FACTORUM",
+          "score": 96,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "POINT LUNA",
+          "score": 75,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "PRISTAR",
+          "score": 140,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "MINING GUILD",
+          "score": 84,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "PHILARES",
+          "score": 69,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "SPLICE",
+          "score": 66,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "MSi",
+          "score": 121,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "ARCADIAN COMMUNITIES",
+          "score": 76,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "POINT LUNA",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "PHILARES",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "credicor",
+          "score": 82,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "APHRODITE",
+          "score": 115,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "THORGATE",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "helion",
+          "score": 77,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "PHARMACY UNION",
+          "score": 84,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "RECYCLON",
+          "score": 78,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "PHARMACY UNION",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "CELESTIC",
+          "score": 74,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "THARSIS REPUBLIC",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 2
+        }
+      ],
+      "stats": {
+        "totalGames": 81,
+        "totalScore": 7534,
+        "averageScore": 93.0,
+        "wins": 26,
+        "seconds": 36,
+        "thirds": 19,
+        "fourths": 0
+      }
+    },
+    {
+      "id": 3,
+      "name": "이연로",
+      "games": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "Terractor",
+          "score": 97,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "MANUTECH",
+          "score": 81,
+          "megacredits": 36,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "CELESTIC",
+          "score": 138,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "Cheungshing Mars",
+          "score": 72,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "SATURN SYSTEM",
+          "score": 100,
+          "megacredits": 34,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "POINT LUNA",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "POSEIDON",
+          "score": 117,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "CINEMATICS",
+          "score": 135,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "VALLEY TRUST",
+          "score": 75,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "ECOLINE",
+          "score": 99,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "CELESTIC",
+          "score": 113,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "Tharsis",
+          "score": 84,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "ECOLINE",
+          "score": 133,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "POSEIDON",
+          "score": 157,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "CELESTIC",
+          "score": 155,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "Mining Guild",
+          "score": 132,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "POINT LUNA",
+          "score": 120,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "THARSIS",
+          "score": 135,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "POINT LUNA",
+          "score": 107,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "CELESTIC",
+          "score": 126,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "APHRODITE",
+          "score": 77,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "VIRON",
+          "score": 143,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "Terractor",
+          "score": 106,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "VALLEY TRUST",
+          "score": 91,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "credicor",
+          "score": 77,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "VITOR",
+          "score": 80,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "helion",
+          "score": 96,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "Cheung Shing Mars",
+          "score": 79,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "THARSIS",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "TERACTOR",
+          "score": 69,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "CELESTIC",
+          "score": 70,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "MANUTECH",
+          "score": 94,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "PRISTAR",
+          "score": 130,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "TERRACTOR",
+          "score": 76,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "THARSIS",
+          "score": 84,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "APHRODITE",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "CheungShing Mars",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "THARSIS",
+          "score": 104,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "TERRACTOR",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "PRISTAR",
+          "score": 73,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "VALLEY TRUST",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "TERRALABS",
+          "score": 68,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "MANUTECH",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "Septem Tribus",
+          "score": 139,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "LAKEFRONT RESORTS",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "ViTOR",
+          "score": 62,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "LAKEFRONT RESORTS",
+          "score": 70,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "POINT LUNA",
+          "score": 84,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "MANUTECH",
+          "score": 123,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "CELESTIC",
+          "score": 95,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "THORGATE",
+          "score": 68,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "VIRON",
+          "score": 58,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "VALLEY TRUST",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "SATURN SYSTEMS",
+          "score": 77,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "INTERPLANETARY CINEMATICS",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "RECYCLON",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "THARSIS",
+          "score": 76,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "mons INSURANCE",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "INVENTRIX",
+          "score": 65,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "TERRALABS",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "UTOPIA",
+          "score": 135,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "PHILARES",
+          "score": 87,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 96,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "MSi",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "mons INSURANCE",
+          "score": 74,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "THARSIS",
+          "score": 64,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "SATURN SYSTEMS",
+          "score": 74,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "VITOR",
+          "score": 110,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "LAKEFRONT RESORTS",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "INVENTRIX",
+          "score": 90,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "FACTORUM",
+          "score": 108,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "PRISTAR",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "PHOBLOG",
+          "score": 78,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "TERACTOR",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 87,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "TERRALABS",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "PHOBLOG",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "INVENTRIX",
+          "score": 91,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "RECYCLON",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "FACTORUM",
+          "score": 66,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "stats": {
+        "totalGames": 81,
+        "totalScore": 7524,
+        "averageScore": 92.9,
+        "wins": 31,
+        "seconds": 25,
+        "thirds": 25,
+        "fourths": 0
+      }
+    }
+  ],
+  "games": [
+    {
+      "date": "2019. 02. 22.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "SATURN SYSTEM",
+          "score": 98,
+          "megacredits": 37,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "VIRON",
+          "score": 98,
+          "megacredits": 21,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "Terractor",
+          "score": 97,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 1
+    },
+    {
+      "date": "2019. 02. 22.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "MANUTECH",
+          "score": 81,
+          "megacredits": 36,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "VITOR",
+          "score": 81,
+          "megacredits": 27,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "STORMCRAFT",
+          "score": 63,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 2
+    },
+    {
+      "date": "2019. 02. 22.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "POINT LUNA",
+          "score": 198,
+          "megacredits": 113,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "THARSIS",
+          "score": 139,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "CELESTIC",
+          "score": 138,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 3
+    },
+    {
+      "date": "2019. 02. 22.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "ECOLINE",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "VALLEY TRUST",
+          "score": 82,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "Cheungshing Mars",
+          "score": 72,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 4
+    },
+    {
+      "date": "2019. 02. 22.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "Terractor",
+          "score": 126,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "SATURN SYSTEM",
+          "score": 100,
+          "megacredits": 34,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "CELESTIC",
+          "score": 100,
+          "megacredits": 27,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 5
+    },
+    {
+      "date": "2019. 02. 22.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "MANUTECH",
+          "score": 100,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "VALLEY TRUST",
+          "score": 94,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "POINT LUNA",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 6
+    },
+    {
+      "date": "2019. 02. 22.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "POSEIDON",
+          "score": 117,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "helion",
+          "score": 106,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "UNMI",
+          "score": 99,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 7
+    },
+    {
+      "date": "2019. 02. 22.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "MSi",
+          "score": 148,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "CINEMATICS",
+          "score": 135,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "VIRON",
+          "score": 123,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 8
+    },
+    {
+      "date": "2019. 02. 22.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "VALLEY TRUST",
+          "score": 75,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "MANUTECH",
+          "score": 66,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "UNMI",
+          "score": 59,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 9
+    },
+    {
+      "date": "2019. 02. 22.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 135,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "PHOBLOG",
+          "score": 118,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "ECOLINE",
+          "score": 99,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 10
+    },
+    {
+      "date": "2019. 02. 22.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "ARIDOR",
+          "score": 114,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "CELESTIC",
+          "score": 113,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "POSEIDON",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 11
+    },
+    {
+      "date": "2019. 03. 15.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "Thorgate",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "Tharsis",
+          "score": 84,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "POINT LUNA",
+          "score": 67,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 12
+    },
+    {
+      "date": "2019. 03. 15.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "POSEIDON",
+          "score": 140,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "ECOLINE",
+          "score": 133,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "Cheungshing MARS",
+          "score": 123,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 13
+    },
+    {
+      "date": "2019. 08. 14.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "POSEIDON",
+          "score": 157,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "SATURN SYSTEM",
+          "score": 129,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "Terractor",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 14
+    },
+    {
+      "date": "2019. 08. 14.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "THORGATE",
+          "score": 165,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "CELESTIC",
+          "score": 155,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "STORMCRAFT",
+          "score": 145,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 15
+    },
+    {
+      "date": "2019. 08. 14.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "Msi",
+          "score": 150,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "Mining Guild",
+          "score": 132,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "Helion",
+          "score": 115,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 16
+    },
+    {
+      "date": "2019. 08. 14.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "POINT LUNA",
+          "score": 120,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "credicor",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "Msi",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 17
+    },
+    {
+      "date": "2019. 08. 14.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "INTERPLANETARY CINEMATICS",
+          "score": 152,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "ARKLIGHT",
+          "score": 138,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "THARSIS",
+          "score": 135,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 18
+    },
+    {
+      "date": "2019. 09. 21.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "Msi",
+          "score": 129,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "MANUTECH",
+          "score": 108,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "POINT LUNA",
+          "score": 107,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 19
+    },
+    {
+      "date": "2019. 09. 21.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "CELESTIC",
+          "score": 126,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "VIRON",
+          "score": 117,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "STORMCRAFT",
+          "score": 102,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 20
+    },
+    {
+      "date": "2019. 09. 21.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 99,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "THORGATE",
+          "score": 90,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "APHRODITE",
+          "score": 77,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 21
+    },
+    {
+      "date": "2019. 09. 21.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "VIRON",
+          "score": 143,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "ARIDOR",
+          "score": 126,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "ROBINSON INDUSTRIES",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 22
+    },
+    {
+      "date": "2019. 09. 21.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "Msi",
+          "score": 116,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "Terractor",
+          "score": 106,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "SATURN SYSTEMS",
+          "score": 103,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 23
+    },
+    {
+      "date": "2019. 09. 21.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "VALLEY TRUST",
+          "score": 91,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "STORMCRAFT",
+          "score": 84,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "POINT LUNA",
+          "score": 68,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 24
+    },
+    {
+      "date": "2019. 11. 09.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "APHRODITE",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "POINT LUNA",
+          "score": 82,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "credicor",
+          "score": 77,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 25
+    },
+    {
+      "date": "2019. 11. 09.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "THORGATE",
+          "score": 69,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "VALLEY TRUST",
+          "score": 64,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 26
+    },
+    {
+      "date": "2019. 11. 09.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "VITOR",
+          "score": 80,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "Cheung Shing Mars",
+          "score": 63,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "INVENTRIX",
+          "score": 57,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 27
+    },
+    {
+      "date": "2019. 11. 09.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "helion",
+          "score": 96,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "THORGATE",
+          "score": 95,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "VITOR",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 28
+    },
+    {
+      "date": "2019. 11. 09.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "THARSIS",
+          "score": 95,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "Cheung Shing Mars",
+          "score": 79,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "INTERPLANETARY CINEMATICS",
+          "score": 55,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 29
+    },
+    {
+      "date": "2019. 11. 09.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "VITOR",
+          "score": 105,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "THARSIS",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "Septem Tribus",
+          "score": 75,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 30
+    },
+    {
+      "date": "2019. 11. 09.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "THARSIS",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "TERACTOR",
+          "score": 69,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "THORGATE",
+          "score": 68,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2019,
+      "id": 31
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "SATURN SYSTEMS",
+          "score": 103,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "mons INSURANCE",
+          "score": 94,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "CELESTIC",
+          "score": 70,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 32
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "MANUTECH",
+          "score": 94,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "PRISTAR",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "APHRODITE",
+          "score": 73,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 33
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "PRISTAR",
+          "score": 130,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "THARSIS",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "TERRALABS",
+          "score": 82,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 34
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "TERRACTOR",
+          "score": 76,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "TERRALABS",
+          "score": 60,
+          "megacredits": 53,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "INTERPLANETARY CINEMATICS",
+          "score": 60,
+          "megacredits": 49,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 35
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "CELESTiC",
+          "score": 99,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "POINT LUNA",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "THARSIS",
+          "score": 84,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 36
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "Msi",
+          "score": 106,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "THARSIS",
+          "score": 80,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "APHRODITE",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 37
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "VALLEY TRUST",
+          "score": 105,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "LAKEFRONT RESORTS",
+          "score": 87,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "CheungShing Mars",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 38
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "THARSIS",
+          "score": 104,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "ROBINSON INDUSTRIES",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "credicor",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 39
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "ROBINSON INDUSTRIES",
+          "score": 101,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "TERRACTOR",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "Msi",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 40
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "TERRACTOR",
+          "score": 144,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "helion",
+          "score": 116,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "PRISTAR",
+          "score": 73,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 41
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "VALLEY TRUST",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "Msi",
+          "score": 79,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "mons INSURANCE",
+          "score": 72,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 42
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "ARCADIAN COMMUNITIES",
+          "score": 70,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "TERRALABS",
+          "score": 68,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "ROBINSON INDUSTRIES",
+          "score": 62,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 43
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "FACTORUM",
+          "score": 110,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "MANUTECH",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "LAKEFRONT RESORTS",
+          "score": 92,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 44
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "Septem Tribus",
+          "score": 139,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "PRISTAR",
+          "score": 112,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "Msi",
+          "score": 74,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 45
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "LAKEFRONT RESORTS",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "UNMI",
+          "score": 75,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "TERRALABS",
+          "score": 70,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 46
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "MINING GUILD",
+          "score": 111,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "CELESTiC",
+          "score": 104,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "ViTOR",
+          "score": 62,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 47
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "PHILARES",
+          "score": 72,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "LAKEFRONT RESORTS",
+          "score": 70,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "CELESTiC",
+          "score": 65,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 48
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "POINT LUNA",
+          "score": 84,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "TERRALABS",
+          "score": 79,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "Cheung Shing Mars",
+          "score": 62,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 49
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "MANUTECH",
+          "score": 123,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "Cheung Shing Mars",
+          "score": 101,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "INVENTRIX",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 50
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "Manutech",
+          "score": 116,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "CELESTIC",
+          "score": 95,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "Vitor",
+          "score": 61,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 51
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "THORGATE",
+          "score": 68,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "MINING GUILD",
+          "score": 61,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "UNMI",
+          "score": 61,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 52
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "ARCADIAN COMMUNITIES",
+          "score": 69,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "VIRON",
+          "score": 58,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "mons INSURANCE",
+          "score": 58,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 53
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "TERRACTOR",
+          "score": 77,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "VALLEY TRUST",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 54
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "MSI",
+          "score": 90,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "SATURN SYSTEMS",
+          "score": 77,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "INVENTRIX",
+          "score": 72,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 55
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "LAKEFRONT RESORTS",
+          "score": 104,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "INTERPLANETARY CINEMATICS",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "ROBINSON INDUSTRIES",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 56
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "Cheung Shing Mars",
+          "score": 98,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "PHILARES",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "RECYCLON",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 57
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "THARSIS",
+          "score": 76,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "THORGATE",
+          "score": 75,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "APHRODITE",
+          "score": 66,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 58
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "ECOLINE",
+          "score": 89,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "mons INSURANCE",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "credicor",
+          "score": 77,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 59
+    },
+    {
+      "date": "2020. 04. 11.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "INVENTRIX",
+          "score": 65,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "ViTOR",
+          "score": 63,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "VALLEY TRUST",
+          "score": 58,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2020,
+      "id": 60
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "MANUTECH",
+          "score": 113,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "PHOBLOG",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "TERRALABS",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 61
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "UTOPIA",
+          "score": 135,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "SPLICE",
+          "score": 91,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "CELESTIC",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 62
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "SATURN SYSTEMS",
+          "score": 116,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "FACTORUM",
+          "score": 96,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "PHILARES",
+          "score": 87,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 63
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 96,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "VALLEY TRUST",
+          "score": 80,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "POINT LUNA",
+          "score": 75,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 64
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "PRISTAR",
+          "score": 140,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "Septem Tribus",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "MSi",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 65
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "MINING GUILD",
+          "score": 84,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "mons INSURANCE",
+          "score": 74,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "TERRALABS",
+          "score": 72,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 66
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "INTERPLANETARY CINEMATICS",
+          "score": 74,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "PHILARES",
+          "score": 69,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "THARSIS",
+          "score": 64,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 67
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "SATURN SYSTEMS",
+          "score": 74,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "SPLICE",
+          "score": 66,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "TERRACTOR",
+          "score": 65,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 68
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "MSi",
+          "score": 121,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "VITOR",
+          "score": 110,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "helion",
+          "score": 80,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 69
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "CELESTIC",
+          "score": 98,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "ARCADIAN COMMUNITIES",
+          "score": 76,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "LAKEFRONT RESORTS",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 70
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "INVENTRIX",
+          "score": 90,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "POINT LUNA",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "THORGATE",
+          "score": 79,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 71
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "MANUTECH",
+          "score": 117,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "FACTORUM",
+          "score": 108,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "PHILARES",
+          "score": 93,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 72
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "ViTOR",
+          "score": 128,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "PRISTAR",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "credicor",
+          "score": 82,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 73
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "red",
+          "corporation": "APHRODITE",
+          "score": 115,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "THARSIS",
+          "score": 95,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "PHOBLOG",
+          "score": 78,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 74
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "TERACTOR",
+          "score": 88,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "green",
+          "corporation": "MINING GUILD",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "THORGATE",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 75
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 87,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "helion",
+          "score": 77,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "CELESTIC",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 76
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "ELYSIUM",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "TERRALABS",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "PHARMACY UNION",
+          "score": 84,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "PHILARES",
+          "score": 81,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 77
+    },
+    {
+      "date": "2021. 02. 20.",
+      "map": "HELLAS",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "UNMI",
+          "score": 80,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "RECYCLON",
+          "score": 78,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "PHOBLOG",
+          "score": 71,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2021,
+      "id": 78
+    },
+    {
+      "date": "2022. 04. 24.",
+      "map": "TERRA CIMERIA",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "credicor",
+          "score": 116,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "green",
+          "corporation": "INVENTRIX",
+          "score": 91,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "yellow",
+          "corporation": "PHARMACY UNION",
+          "score": 85,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2022,
+      "id": 79
+    },
+    {
+      "date": "2022. 04. 24.",
+      "map": "THARSIS",
+      "results": [
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "red",
+          "corporation": "RECYCLON",
+          "score": 83,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "CELESTIC",
+          "score": 74,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "yellow",
+          "corporation": "PHOBLOG",
+          "score": 66,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2022,
+      "id": 80
+    },
+    {
+      "date": "2022. 04. 24.",
+      "map": "UTOPIA PLANITIA",
+      "results": [
+        {
+          "playerId": 387212,
+          "playerName": "강보석",
+          "cubeColor": "red",
+          "corporation": "VIRON",
+          "score": 116,
+          "megacredits": 0,
+          "rank": 1
+        },
+        {
+          "playerId": 132361,
+          "playerName": "김기훈",
+          "cubeColor": "green",
+          "corporation": "THARSIS REPUBLIC",
+          "score": 86,
+          "megacredits": 0,
+          "rank": 2
+        },
+        {
+          "playerId": 796960,
+          "playerName": "이연로",
+          "cubeColor": "yellow",
+          "corporation": "FACTORUM",
+          "score": 66,
+          "megacredits": 0,
+          "rank": 3
+        }
+      ],
+      "year": 2022,
+      "id": 81
+    }
+  ],
+  "exportDate": "2025-10-09T18:13:25.387758",
+  "version": "1.0",
+  "description": "테라포밍 마스 레거시 데이터 (2019-2022)",
+  "source": "Excel 파일 파싱",
+  "totalGames": 81,
+  "totalPlayers": 3,
+  "yearRange": "2019-2022"
+}

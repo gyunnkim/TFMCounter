@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테라포밍 마스 점수 관리</title>
+    <link rel="icon" type="image/jpeg" href="img/terraforming-mars-icon.jpeg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><img src="img/terraforming-mars-icon.jpeg" alt="테라포밍 마스" class="title-icon"> 테라포밍 마스 점수 관리</h1>
+        </header>
+
+        <main>
+            <!-- 플레이어 설정 섹션 -->
+            <section id="player-setup" class="section">
+                <h2>플레이어 설정</h2>
+                <div class="player-count">
+                    <label for="playerCount">플레이어 수:</label>
+                    <select id="playerCount">
+                        <option value="3">3명</option>
+                        <option value="4">4명</option>
+                    </select>
+                </div>
+                
+                <div id="players-container">
+                    <!-- 플레이어 입력 필드들이 동적으로 생성됩니다 -->
+                </div>
+                
+                <button id="setupPlayers" class="btn btn-primary">플레이어 설정 완료</button>
+            </section>
+
+            <!-- 게임 입력 섹션 -->
+            <section id="game-input" class="section hidden">
+                <h2>게임 결과 입력</h2>
+                
+                <div class="map-selection">
+                    <div id="selectedMapDisplay" class="selected-map-display">
+                        <span class="map-label">선택된 맵:</span>
+                        <span id="selectedMapName" class="map-name">맵을 선택해주세요</span>
+                    </div>
+                    <select id="mapSelect" style="display: none;">
+                        <option value="THARSIS">THARSIS</option>
+                        <option value="HELLAS">HELLAS</option>
+                        <option value="ELYSIUM">ELYSIUM</option>
+                        <option value="VASTITAS BOREALIS">VASTITAS BOREALIS</option>
+                        <option value="UTOPIA PLANITIA">UTOPIA PLANITIA</option>
+                        <option value="TERRA CIMERIA">TERRA CIMERIA</option>
+                    </select>
+                </div>
+
+                <div class="game-controls">
+                    <button id="randomizeOrder" class="btn btn-info">🎲 순서 정하기</button>
+                    <button id="randomizeColonies" class="btn btn-secondary">🚀 개척기지 뽑기</button>
+                    <button id="randomizeMap" class="btn btn-warning">🗺️ 맵 랜덤 선택</button>
+                </div>
+
+                <div id="game-scores-container">
+                    <!-- 게임 점수 입력 필드들이 동적으로 생성됩니다 -->
+                </div>
+
+                <button id="addGame" class="btn btn-success">게임 결과 추가</button>
+                <button id="resetPlayers" class="btn btn-secondary">플레이어 재설정</button>
+            </section>
+
+            <!-- 랭킹 섹션 -->
+            <section id="ranking" class="section">
+                <div class="ranking-header">
+                    <h2>랭킹</h2>
+                    <div class="ranking-tabs">
+                        <button id="playerRankingTab" class="tab-btn active">플레이어 랭킹</button>
+                        <button id="corporationRankingTab" class="tab-btn">기업별 랭킹</button>
+                        <button id="mapRankingTab" class="tab-btn">맵별 랭킹</button>
+                    </div>
+                </div>
+                
+                <div class="ranking-content">
+                    <div id="player-ranking" class="ranking-view active">
+                        <!-- 플레이어 랭킹이 동적으로 생성됩니다 -->
+                    </div>
+                    <div id="corporation-ranking" class="ranking-view">
+                        <!-- 기업별 랭킹이 동적으로 생성됩니다 -->
+                    </div>
+                    <div id="map-ranking" class="ranking-view">
+                        <!-- 맵별 랭킹이 동적으로 생성됩니다 -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- 게임 히스토리 섹션 -->
+            <section id="history" class="section">
+                <h2>게임 히스토리</h2>
+                <div class="history-controls">
+                    <button id="exportData" class="btn btn-info">데이터 내보내기 (레거시 저장)</button>
+                    <input type="file" id="importData" accept=".json" style="display: none;">
+                    <button id="importBtn" class="btn btn-info">레거시 데이터 불러오기</button>
+                </div>
+                <div id="history-container">
+                    <!-- 게임 히스토리가 동적으로 생성됩니다 -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 메인 클래스 -->
+    <script src="script/main.js"></script>
+    
+    <!-- 기능별 모듈들 -->
+    <script src="script/playerManager.js"></script>
+    <script src="script/gameManager.js"></script>
+    <script src="script/rankingManager.js"></script>
+    <script src="script/corporationRanking.js"></script>
+    <script src="script/mapRanking.js"></script>
+    <script src="script/uiManager.js"></script>
+    <script src="script/historyManager.js"></script>
+    <script src="script/dataManager.js"></script>
+    <script src="script/orderManager.js"></script>
+    <script src="script/syncManager.js"></script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+// 실시간 동기화 관리 기능
+TerraformingMarsTracker.prototype.initializeSync = function() {
+    // 현재 호스트에 따라 서버 URL 결정
+    const currentHost = window.location.hostname;
+    const currentPort = window.location.port || '3010';
+    if (currentHost === 'localhost' || currentHost === '127.0.0.1') {
+        this.syncServerUrl = `http://localhost:${currentPort}`;
+    } else {
+        this.syncServerUrl = `http://${currentHost}:${currentPort}`;
+    }
+    console.log('동기화 서버 URL:', this.syncServerUrl);
+    this.lastSyncTimestamp = null;
+    this.syncInterval = null;
+    
+    // 연결 상태 표시
+    this.createSyncIndicator();
+    
+    // 서버에서 초기 데이터 로드
+    this.loadFromServer();
+    
+    // 주기적 동기화 시작 (3초마다)
+    this.startPeriodicSync();
+};
+
+// 동기화 상태 표시기 생성
+TerraformingMarsTracker.prototype.createSyncIndicator = function() {
+    const indicator = document.createElement('div');
+    indicator.id = 'sync-indicator';
+    indicator.innerHTML = `
+        <div class="sync-status">
+            <span class="sync-dot"></span>
+            <span class="sync-text">연결 중...</span>
+        </div>
+    `;
+    document.body.appendChild(indicator);
+    
+    // CSS 스타일 추가
+    const style = document.createElement('style');
+    style.textContent = `
+        #sync-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 12px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 8000;
+            font-size: 0.8rem;
+        }
+        
+        .sync-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .sync-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #fbbf24;
+            animation: pulse 2s infinite;
+        }
+        
+        .sync-dot.connected {
+            background: #10b981;
+            animation: none;
+        }
+        
+        .sync-dot.disconnected {
+            background: #ef4444;
+            animation: none;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    `;
+    document.head.appendChild(style);
+};
+
+// 동기화 상태 업데이트
+TerraformingMarsTracker.prototype.updateSyncIndicator = function(connected) {
+    const dot = document.querySelector('.sync-dot');
+    const text = document.querySelector('.sync-text');
+    
+    if (connected) {
+        dot.className = 'sync-dot connected';
+        text.textContent = '실시간 동기화';
+    } else {
+        dot.className = 'sync-dot disconnected';
+        text.textContent = '연결 끊김';
+    }
+};
+
+// 서버 데이터 업데이트 처리
+TerraformingMarsTracker.prototype.handleServerDataUpdate = function(data) {
+    console.log('서버 데이터 업데이트 처리:', data);
+    
+    if (data.players !== undefined && data.games !== undefined) {
+        const oldPlayersLength = this.players.length;
+        const oldGamesLength = this.games.length;
+        
+        this.players = data.players;
+        this.games = data.games;
+        this.lastSyncTimestamp = data.lastUpdated;
+        
+        // 선택된 맵 복원
+        if (data.selectedMap) {
+            this.selectedMap = data.selectedMap;
+            const mapSelect = document.getElementById('mapSelect');
+            if (mapSelect && mapSelect.value !== data.selectedMap) {
+                mapSelect.value = data.selectedMap;
+                // 맵 표시도 업데이트
+                if (typeof this.updateSelectedMapDisplay === 'function') {
+                    this.updateSelectedMapDisplay(data.selectedMap);
+                }
+                console.log('맵 선택 복원:', data.selectedMap);
+            }
+        }
+        
+        console.log(`플레이어: ${oldPlayersLength} -> ${this.players.length}, 게임: ${oldGamesLength} -> ${this.games.length}`);
+        
+        // 통계 재계산
+        if (this.games.length > 0) {
+            this.recalculateAllStats();
+            console.log('통계 재계산 완료 - 플레이어 평균점수 확인:');
+            this.players.forEach(player => {
+                console.log(`${player.name}: ${player.stats.averageScore}점 (${player.stats.totalScore}/${player.stats.totalGames})`);
+            });
+        }
+        
+        // UI 업데이트
+        if (this.players.length > 0) {
+            document.getElementById('player-setup').classList.add('hidden');
+            document.getElementById('game-input').classList.remove('hidden');
+            // generateGameInputs 호출 전에 잠시 대기
+            setTimeout(() => {
+                this.generateGameInputs();
+                
+                // 플레이어 순서가 있으면 UI 업데이트
+                const hasOrder = this.players.some(player => player.playOrder);
+                if (hasOrder) {
+                    console.log('플레이어 순서 복원 중...');
+                    // 순서 정하기 버튼 텍스트 업데이트
+                    const orderButton = document.getElementById('randomizeOrder');
+                    if (orderButton) {
+                        orderButton.textContent = '🔄 순서 다시 정하기';
+                    }
+                    // 순서 표시 업데이트
+                    setTimeout(() => {
+                        this.updateGameInputsWithOrder();
+                    }, 200);
+                    
+                    // 플레이어가 순서대로 정렬되어 있는지 확인
+                    const isOrderedCorrectly = this.checkPlayerOrderArrangement();
+                    if (!isOrderedCorrectly) {
+                        console.log('플레이어 순서 재배치 필요');
+                    }
+                }
+            }, 100);
+        } else {
+            document.getElementById('player-setup').classList.remove('hidden');
+            document.getElementById('game-input').classList.add('hidden');
+        }
+        
+        this.updateRanking();
+        this.updateHistory();
+        
+        // 로컬 스토리지도 업데이트
+        this.saveData();
+        
+        console.log('서버 데이터 업데이트 완료');
+    } else {
+        console.log('서버 데이터가 유효하지 않음:', data);
+    }
+};
+
+// 모든 통계 재계산
+TerraformingMarsTracker.prototype.recalculateAllStats = function() {
+    // 플레이어 통계 초기화
+    this.players.forEach(player => {
+        player.games = [];
+        player.stats = {
+            totalGames: 0,
+            totalScore: 0,
+            averageScore: 0,
+            wins: 0,
+            seconds: 0,
+            thirds: 0,
+            fourths: 0
+        };
+    });
+    
+    // 게임 데이터로부터 통계 재계산 (이름으로 매칭)
+    this.games.forEach(game => {
+        game.results.forEach(result => {
+            const player = this.players.find(p => p.name === result.playerName);
+            if (player) {
+                player.games.push(result);
+                player.stats.totalGames++;
+                player.stats.totalScore += result.score;
+                
+                // 순위별 카운트
+                switch (result.rank) {
+                    case 1: player.stats.wins++; break;
+                    case 2: player.stats.seconds++; break;
+                    case 3: player.stats.thirds++; break;
+                    case 4: player.stats.fourths++; break;
+                }
+            }
+        });
+    });
+    
+    // 평균점수 계산
+    this.players.forEach(player => {
+        if (player.stats.totalGames > 0) {
+            player.stats.averageScore = Math.round(player.stats.totalScore / player.stats.totalGames * 10) / 10;
+        }
+    });
+};
+
+// 플레이어 순서 배치 확인
+TerraformingMarsTracker.prototype.checkPlayerOrderArrangement = function() {
+    const playersWithOrder = this.players.filter(player => player.playOrder);
+    if (playersWithOrder.length === 0) return true;
+    
+    // 순서대로 정렬된 상태인지 확인
+    for (let i = 0; i < playersWithOrder.length; i++) {
+        if (playersWithOrder[i].id !== i + 1 || playersWithOrder[i].playOrder !== i + 1) {
+            return false;
+        }
+    }
+    return true;
+};
+
+// 게임 데이터로부터 플레이어 통계 업데이트
+TerraformingMarsTracker.prototype.updatePlayerStatsFromGames = function() {
+    this.recalculateAllStats();
+};
+
+// 서버에서 데이터 로드
+TerraformingMarsTracker.prototype.loadFromServer = function() {
+    console.log('서버에서 데이터 로드 시도:', this.syncServerUrl);
+    fetch(`${this.syncServerUrl}/api/data`)
+        .then(response => {
+            console.log('서버 응답 상태:', response.status);
+            return response.json();
+        })
+        .then(data => {
+            console.log('서버에서 데이터 로드 성공:', data);
+            this.handleServerDataUpdate(data);
+            this.updateSyncIndicator(true);
+        })
+        .catch(error => {
+            console.error('서버 데이터 로드 실패:', error);
+            this.updateSyncIndicator(false);
+        });
+};
+
+// 주기적 동기화 시작
+TerraformingMarsTracker.prototype.startPeriodicSync = function() {
+    this.syncInterval = setInterval(() => {
+        this.checkForUpdates();
+    }, 3000); // 3초마다 체크
+};
+
+// 업데이트 확인
+TerraformingMarsTracker.prototype.checkForUpdates = function() {
+    const url = `${this.syncServerUrl}/api/sync?timestamp=${encodeURIComponent(this.lastSyncTimestamp || '')}`;
+    
+    console.log('업데이트 확인:', url, '현재 타임스탬프:', this.lastSyncTimestamp);
+    
+    fetch(url)
+        .then(response => response.json())
+        .then(result => {
+            console.log('동기화 체크 결과:', result);
+            if (result.needsUpdate && result.data) {
+                console.log('서버에서 업데이트 감지, 데이터 적용:', result.data);
+                this.handleServerDataUpdate(result.data);
+            } else {
+                console.log('업데이트 없음');
+            }
+            this.updateSyncIndicator(true);
+        })
+        .catch(error => {
+            console.error('동기화 체크 실패:', error);
+            this.updateSyncIndicator(false);
+        });
+};
+
+// 디버깅용 함수 - 콘솔에서 호출 가능
+TerraformingMarsTracker.prototype.debugPlayerStats = function() {
+    console.log('=== 플레이어 통계 디버깅 ===');
+    this.players.forEach(player => {
+        console.log(`${player.name}:`, {
+            totalGames: player.stats.totalGames,
+            totalScore: player.stats.totalScore,
+            averageScore: player.stats.averageScore,
+            wins: player.stats.wins,
+            seconds: player.stats.seconds,
+            thirds: player.stats.thirds
+        });
+    });
+    console.log('총 게임 수:', this.games.length);
+};
+
+// 서버로 데이터 전송
+TerraformingMarsTracker.prototype.syncToServer = function(type, data) {
+    const fullData = {
+        players: this.players,
+        games: this.games,
+        selectedMap: this.selectedMap || 'THARSIS' // 기본값 설정
+    };
+    
+    console.log('서버로 데이터 전송:', type, fullData);
+    
+    fetch(`${this.syncServerUrl}/api/data`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(fullData)
+    })
+    .then(response => {
+        console.log('서버 응답 상태:', response.status);
+        return response.json();
+    })
+    .then(result => {
+        console.log('서버로 데이터 동기화 완료:', result);
+        this.updateSyncIndicator(true);
+        
+        // 동기화 후 타임스탬프 업데이트
+        if (result.lastUpdated) {
+            this.lastSyncTimestamp = result.lastUpdated;
+        }
+    })
+    .catch(error => {
+        console.error('서버 동기화 실패:', error);
+        this.updateSyncIndicator(false);
+    });
+};
