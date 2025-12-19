@@ -369,7 +369,8 @@ TerraformingMarsTracker.prototype.addGame = function() {
     // 게임 기록 저장
     const game = {
         id: Date.now(),
-        date: new Date().toLocaleDateString('ko-KR'),
+        date: new Date().toISOString(),
+        dateDisplay: new Date().toLocaleDateString('ko-KR'),
         map: mapName,
         results: gameResults
     };
@@ -415,6 +416,9 @@ TerraformingMarsTracker.prototype.addGame = function() {
     if (coloniesDisplay) {
         coloniesDisplay.classList.add('hidden');
     }
+
+    // 개척기지 선택 상태도 초기화 (서버 동기화로 다시 복원되는 것 방지)
+    this.selectedColonies = [];
     
     // 리셋 플래그 설정
     this.isResetting = true;
@@ -438,6 +442,7 @@ TerraformingMarsTracker.prototype.addGame = function() {
     if (typeof this.syncToServer === 'function') {
         this.syncToServer('postAddGameReset', {
             selectedMap: this.selectedMap,
+            selectedColonies: this.selectedColonies,
             players: this.players
         });
     }

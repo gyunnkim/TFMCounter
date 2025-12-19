@@ -32,8 +32,9 @@ TerraformingMarsTracker.prototype.updateHistory = function() {
 
         const header = document.createElement('div');
         header.className = 'game-header';
+        const displayDate = game.dateDisplay || (typeof game.date === 'string' ? game.date : '');
         header.innerHTML = `
-            <span>📅 ${game.date} - 🗺️ ${game.map}</span>
+            <span>📅 ${displayDate} - 🗺️ ${game.map}</span>
             <button onclick="tmTracker.deleteGame(${game.id})" class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;">삭제</button>
         `;
 
@@ -80,8 +81,28 @@ TerraformingMarsTracker.prototype.updateHistory = function() {
 // 날짜 범위 계산
 TerraformingMarsTracker.prototype.getDateRange = function() {
     if (this.games.length === 0) return '';
-    
-    const dates = this.games.map(game => new Date(game.date)).sort((a, b) => a - b);
+
+    const parseGameDate = (game) => {
+        if (game.date instanceof Date) return game.date;
+        if (typeof game.date === 'string') {
+            // ISO는 대부분 환경에서 안전
+            const isoParsed = new Date(game.date);
+            if (!isNaN(isoParsed.getTime())) return isoParsed;
+
+            // 구형 저장 포맷: 'YYYY. M. D.' / 'YYYY. MM. DD.' 형태 수동 파싱
+            const m = game.date.match(/^(\d{4})\.\s*(\d{1,2})\.\s*(\d{1,2})\.?$/);
+            if (m) {
+                const y = parseInt(m[1], 10);
+                const mo = parseInt(m[2], 10) - 1;
+                const d = parseInt(m[3], 10);
+                return new Date(Date.UTC(y, mo, d));
+            }
+        }
+        return new Date(NaN);
+    };
+
+    const dates = this.games.map(parseGameDate).filter(d => !isNaN(d.getTime())).sort((a, b) => a - b);
+    if (dates.length === 0) return '';
     const firstDate = dates[0];
     const lastDate = dates[dates.length - 1];
     
