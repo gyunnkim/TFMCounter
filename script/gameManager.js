@@ -395,10 +395,19 @@ TerraformingMarsTracker.prototype.addGame = function() {
         document.getElementById(`totalScore${player.id}`).value = '';
     });
     
-    // 맵 선택 초기화
-    document.getElementById('mapSelect').value = '';
-    document.getElementById('selectedMapName').textContent = '맵을 선택해주세요';
-    document.getElementById('selectedMapName').classList.remove('selected');
+    // 맵 선택 강제 초기화
+    const mapSelect = document.getElementById('mapSelect');
+    const selectedMapName = document.getElementById('selectedMapName');
+    
+    if (mapSelect) {
+        mapSelect.value = '';
+        mapSelect.selectedIndex = 0;
+    }
+    
+    if (selectedMapName) {
+        selectedMapName.textContent = '맵을 선택해주세요';
+        selectedMapName.classList.remove('selected');
+    }
     
     // 개척기지 표시 숨기기
     const coloniesDisplay = document.getElementById('colonies-display');
@@ -406,16 +415,24 @@ TerraformingMarsTracker.prototype.addGame = function() {
         coloniesDisplay.classList.add('hidden');
     }
     
-    // 옵션 다시 업데이트 (먼저 실행)
-    this.updateAvailableOptions();
-    
-    // 플레이어 기업 선택 정보도 초기화 (나중에 실행)
+    // 플레이어 기업 선택 정보 먼저 초기화
     this.players.forEach(player => {
         player.selectedCorporation = null;
-        // 기업 드롭다운도 강제로 초기화
+    });
+    
+    // 기업 드롭다운 강제 초기화
+    this.players.forEach(player => {
         const corpSelect = document.getElementById(`corp${player.id}`);
         if (corpSelect) {
             corpSelect.value = '';
+            // 옵션도 완전히 재생성
+            corpSelect.innerHTML = '<option value="">기업 선택</option>';
+            this.corporations.forEach(corp => {
+                const option = document.createElement('option');
+                option.value = corp;
+                option.textContent = corp;
+                corpSelect.appendChild(option);
+            });
         }
     });
 
