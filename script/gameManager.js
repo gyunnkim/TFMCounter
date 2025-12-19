@@ -144,8 +144,8 @@ TerraformingMarsTracker.prototype.generateGameInputs = function() {
             corpSelect.appendChild(option);
         });
         
-        // 저장된 기업이 있으면 복원
-        if (player.selectedCorporation) {
+        // 저장된 기업이 있으면 복원 (게임 결과 추가 후에는 복원하지 않음)
+        if (player.selectedCorporation && !this.isResetting) {
             corpSelect.value = player.selectedCorporation;
         }
     });
@@ -415,26 +415,20 @@ TerraformingMarsTracker.prototype.addGame = function() {
         coloniesDisplay.classList.add('hidden');
     }
     
+    // 리셋 플래그 설정
+    this.isResetting = true;
+    
     // 플레이어 기업 선택 정보 먼저 초기화
     this.players.forEach(player => {
         player.selectedCorporation = null;
     });
     
-    // 기업 드롭다운 강제 초기화
-    this.players.forEach(player => {
-        const corpSelect = document.getElementById(`corp${player.id}`);
-        if (corpSelect) {
-            corpSelect.value = '';
-            // 옵션도 완전히 재생성
-            corpSelect.innerHTML = '<option value="">기업 선택</option>';
-            this.corporations.forEach(corp => {
-                const option = document.createElement('option');
-                option.value = corp;
-                option.textContent = corp;
-                corpSelect.appendChild(option);
-            });
-        }
-    });
+    // 강제로 게임 입력 폼을 다시 생성
+    setTimeout(() => {
+        this.generateGameInputs();
+        // 리셋 완료 후 플래그 해제
+        this.isResetting = false;
+    }, 100);
 
     // UI 업데이트
     this.updateRanking();
