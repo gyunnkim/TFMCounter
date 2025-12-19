@@ -35,11 +35,23 @@ TerraformingMarsTracker.prototype.generateGameInputs = function() {
                     <label class="player-name-label" style="font-weight: 600; font-size: 1.1rem; color: #2d3748;">${player.name}</label>
                 </div>
             </div>
-            <select id="corp${player.id}" class="corp-select" style="margin-bottom: 5px; padding: 8px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; width: 100%;">
+            <select id="corp${player.id}" class="corp-select" style="margin-bottom: 10px; padding: 8px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; width: 100%;">
                 <option value="">기업 선택</option>
             </select>
-            <input type="number" id="score${player.id}" placeholder="점수" min="0" max="300">
-            <input type="number" id="megacredits${player.id}" placeholder="메가크레딧" min="0">
+            <div class="score-breakdown" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px;">
+                <input type="number" id="tr${player.id}" placeholder="TR" min="0" max="63" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
+                <input type="number" id="awards${player.id}" placeholder="업적" min="0" max="15" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
+                <input type="number" id="milestones${player.id}" placeholder="기업상" min="0" max="15" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
+                <input type="number" id="druid${player.id}" placeholder="드루이드" min="0" max="20" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
+                <input type="number" id="forest${player.id}" placeholder="숲" min="0" max="20" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
+                <input type="number" id="city${player.id}" placeholder="도시" min="0" max="30" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
+                <input type="number" id="congress${player.id}" placeholder="의회" min="0" max="20" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
+                <input type="number" id="cards${player.id}" placeholder="카드점수" min="0" max="50" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px;">
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 10px;">
+                <input type="number" id="totalScore${player.id}" placeholder="총점" readonly style="padding: 8px; border: 2px solid #cbd5e0; border-radius: 6px; background-color: #f7fafc; font-weight: bold; flex: 1;">
+                <input type="number" id="megacredits${player.id}" placeholder="메가크레딧" min="0" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px; flex: 1;">
+            </div>
         `;
         container.appendChild(scoreDiv);
 
@@ -110,6 +122,15 @@ TerraformingMarsTracker.prototype.generateGameInputs = function() {
             
             // 로컬 스토리지도 업데이트
             this.saveData();
+        });
+
+        // 점수 입력 필드들에 자동 계산 이벤트 리스너 추가
+        const scoreFields = ['tr', 'awards', 'milestones', 'druid', 'forest', 'city', 'congress', 'cards'];
+        scoreFields.forEach(field => {
+            const input = document.getElementById(`${field}${player.id}`);
+            input.addEventListener('input', () => {
+                this.calculateTotalScore(player.id);
+            });
         });
     });
 
@@ -290,10 +311,24 @@ TerraformingMarsTracker.prototype.addGame = function() {
     this.players.forEach(player => {
         const cubeColor = player.selectedCube; // 저장된 큐브 색상 사용
         const corporation = document.getElementById(`corp${player.id}`).value;
-        const score = parseInt(document.getElementById(`score${player.id}`).value);
         const megacredits = parseInt(document.getElementById(`megacredits${player.id}`).value) || 0;
+        
+        // 세분화된 점수 수집
+        const scoreBreakdown = {
+            tr: parseInt(document.getElementById(`tr${player.id}`).value) || 0,
+            awards: parseInt(document.getElementById(`awards${player.id}`).value) || 0,
+            milestones: parseInt(document.getElementById(`milestones${player.id}`).value) || 0,
+            druid: parseInt(document.getElementById(`druid${player.id}`).value) || 0,
+            forest: parseInt(document.getElementById(`forest${player.id}`).value) || 0,
+            city: parseInt(document.getElementById(`city${player.id}`).value) || 0,
+            congress: parseInt(document.getElementById(`congress${player.id}`).value) || 0,
+            cards: parseInt(document.getElementById(`cards${player.id}`).value) || 0
+        };
+        
+        // 총점 계산
+        const totalScore = Object.values(scoreBreakdown).reduce((sum, score) => sum + score, 0);
 
-        if (!cubeColor || !corporation || isNaN(score) || score < 0) {
+        if (!cubeColor || !corporation || totalScore <= 0) {
             allValid = false;
             return;
         }
@@ -303,7 +338,8 @@ TerraformingMarsTracker.prototype.addGame = function() {
             playerName: player.name,
             cubeColor: cubeColor,
             corporation: corporation,
-            score: score,
+            score: totalScore,
+            scoreBreakdown: scoreBreakdown,
             megacredits: megacredits
         });
     });
@@ -345,8 +381,16 @@ TerraformingMarsTracker.prototype.addGame = function() {
     // 입력 필드 초기화 (큐브 색상은 유지)
     this.players.forEach(player => {
         document.getElementById(`corp${player.id}`).value = '';
-        document.getElementById(`score${player.id}`).value = '';
         document.getElementById(`megacredits${player.id}`).value = '';
+        
+        // 세분화된 점수 필드들 초기화
+        const scoreFields = ['tr', 'awards', 'milestones', 'druid', 'forest', 'city', 'congress', 'cards'];
+        scoreFields.forEach(field => {
+            document.getElementById(`${field}${player.id}`).value = '';
+        });
+        
+        // 총점 필드도 초기화
+        document.getElementById(`totalScore${player.id}`).value = '';
     });
     
     // 옵션 다시 업데이트
@@ -427,4 +471,20 @@ TerraformingMarsTracker.prototype.deleteGame = function(gameId) {
     this.updateRanking();
     this.updateHistory();
     this.saveData();
+};
+
+// 총점 자동 계산 함수
+TerraformingMarsTracker.prototype.calculateTotalScore = function(playerId) {
+    const scoreFields = ['tr', 'awards', 'milestones', 'druid', 'forest', 'city', 'congress', 'cards'];
+    let totalScore = 0;
+    
+    scoreFields.forEach(field => {
+        const input = document.getElementById(`${field}${playerId}`);
+        const value = parseInt(input.value) || 0;
+        totalScore += value;
+    });
+    
+    // 총점 필드 업데이트
+    const totalScoreInput = document.getElementById(`totalScore${playerId}`);
+    totalScoreInput.value = totalScore;
 };
