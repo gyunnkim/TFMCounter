@@ -22,7 +22,8 @@ const LAST_UPDATED_KEY = 'terraforming_mars_last_updated';
 const defaultGameData = {
     players: [],
     games: [],
-    selectedMap: 'THARSIS'
+    selectedMap: 'THARSIS',
+    selectedColonies: []
 };
 
 export default async function handler(req, res) {
@@ -77,7 +78,9 @@ export default async function handler(req, res) {
             const dataToSave = {
                 players: newData.players,
                 games: newData.games,
-                selectedMap: newData.selectedMap || 'THARSIS'
+                // ''(빈 문자열)도 유효한 "선택 안 함" 상태로 취급
+                selectedMap: (newData.selectedMap === undefined || newData.selectedMap === null) ? 'THARSIS' : newData.selectedMap,
+                selectedColonies: Array.isArray(newData.selectedColonies) ? newData.selectedColonies : []
             };
             
             await client.set(GAME_DATA_KEY, JSON.stringify(dataToSave));

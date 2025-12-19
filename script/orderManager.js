@@ -403,6 +403,16 @@ TerraformingMarsTracker.prototype.randomizeColonies = function() {
     // 필요한 개수만큼 선택
     const selectedColonies = shuffledColonies.slice(0, colonyCount);
 
+    // 선택 결과를 상태로 저장 (다른 클라이언트 동기화용)
+    this.selectedColonies = selectedColonies;
+
+    // 서버로 개척기지 선택 동기화
+    if (typeof this.syncToServer === 'function') {
+        this.syncToServer('updateSelectedColonies', {
+            selectedColonies: selectedColonies
+        });
+    }
+
     // 결과 표시
     this.displayColoniesInPage(selectedColonies);
 };
@@ -903,6 +913,12 @@ TerraformingMarsTracker.prototype.updateSelectedMapDisplay = function(mapValue) 
 TerraformingMarsTracker.prototype.displayColoniesInPage = function(selectedColonies) {
     const coloniesDisplay = document.getElementById('colonies-display');
     const coloniesList = document.getElementById('colonies-list');
+
+    if (!Array.isArray(selectedColonies) || selectedColonies.length === 0) {
+        coloniesList.innerHTML = '';
+        coloniesDisplay.classList.add('hidden');
+        return;
+    }
     
     // 개척기지 목록 HTML 생성
     coloniesList.innerHTML = selectedColonies.map(colony => `
@@ -916,20 +932,4 @@ TerraformingMarsTracker.prototype.displayColoniesInPage = function(selectedColon
     coloniesDisplay.classList.remove('hidden');
     
     console.log('개척기지 표시:', selectedColonies);
-};
-
-// 선택된 맵을 바로 적용하는 함수
-TerraformingMarsTracker.prototype.applySelectedMap = function(selectedMap) {
-    // 맵 선택 드롭다운에 값 설정
-    const mapSelect = document.getElementById('mapSelect');
-    mapSelect.value = selectedMap.value;
-    
-    // 맵 표시 업데이트
-    const mapNameElement = document.getElementById('selectedMapName');
-    if (mapNameElement) {
-        mapNameElement.textContent = selectedMap.name;
-        mapNameElement.classList.add('selected');
-    }
-    
-    console.log('맵 랜덤 선택 완료:', selectedMap.name);
 };

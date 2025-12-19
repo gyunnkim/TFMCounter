@@ -112,17 +112,35 @@ TerraformingMarsTracker.prototype.handleServerDataUpdate = function(data) {
         this.games = data.games;
         this.lastSyncTimestamp = data.lastUpdated;
         
-        // 선택된 맵 복원
-        if (data.selectedMap) {
+        // 선택된 맵 복원 (''도 유효한 "선택 안 함" 상태)
+        if (data.selectedMap !== undefined && data.selectedMap !== null) {
             this.selectedMap = data.selectedMap;
             const mapSelect = document.getElementById('mapSelect');
             if (mapSelect && mapSelect.value !== data.selectedMap) {
                 mapSelect.value = data.selectedMap;
+            }
+
+            if (data.selectedMap === '') {
+                const selectedMapName = document.getElementById('selectedMapName');
+                if (selectedMapName) {
+                    selectedMapName.textContent = '맵을 선택해주세요';
+                    selectedMapName.classList.remove('selected');
+                }
+            } else {
                 // 맵 표시도 업데이트
                 if (typeof this.updateSelectedMapDisplay === 'function') {
                     this.updateSelectedMapDisplay(data.selectedMap);
                 }
-                console.log('맵 선택 복원:', data.selectedMap);
+            }
+
+            console.log('맵 선택 복원:', data.selectedMap);
+        }
+
+        // 선택된 개척기지 복원
+        if (data.selectedColonies && Array.isArray(data.selectedColonies)) {
+            this.selectedColonies = data.selectedColonies;
+            if (typeof this.displayColoniesInPage === 'function') {
+                this.displayColoniesInPage(this.selectedColonies);
             }
         }
         
@@ -318,7 +336,8 @@ TerraformingMarsTracker.prototype.syncToServer = function(type, data) {
         players: this.players,
         games: this.games,
         // ''(빈 문자열)도 유효한 "초기화 상태"로 취급해야 하므로 || 를 쓰면 안 됨
-        selectedMap: (this.selectedMap === undefined || this.selectedMap === null) ? 'THARSIS' : this.selectedMap // 기본값 설정
+        selectedMap: (this.selectedMap === undefined || this.selectedMap === null) ? 'THARSIS' : this.selectedMap, // 기본값 설정
+        selectedColonies: Array.isArray(this.selectedColonies) ? this.selectedColonies : []
     };
     
     console.log('서버로 데이터 전송:', type, fullData);

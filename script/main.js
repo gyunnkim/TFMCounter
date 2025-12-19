@@ -3,6 +3,7 @@ class TerraformingMarsTracker {
     constructor() {
         this.players = [];
         this.games = [];
+        this.selectedColonies = [];
         this.currentPlayerCount = 3;
         this.corporations = [
             'Aphrodite',
