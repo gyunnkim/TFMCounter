@@ -895,6 +895,11 @@ TerraformingMarsTracker.prototype.applySelectedMap = function(mapValue) {
 
 // 선택된 맵 표시 업데이트
 TerraformingMarsTracker.prototype.updateSelectedMapDisplay = function(mapValue) {
+    // 과거 호출부 호환: 객체({value,name,...})가 들어오면 value만 사용
+    if (mapValue && typeof mapValue === 'object' && 'value' in mapValue) {
+        mapValue = mapValue.value;
+    }
+
     const mapNameElement = document.getElementById('selectedMapName');
     if (mapNameElement && mapValue) {
         // 맵 이름 매핑
