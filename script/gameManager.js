@@ -383,7 +383,6 @@ TerraformingMarsTracker.prototype.addGame = function() {
 
     // 입력 필드 초기화 (큐브 색상은 유지)
     this.players.forEach(player => {
-        document.getElementById(`corp${player.id}`).value = '';
         document.getElementById(`megacredits${player.id}`).value = '';
         
         // 세분화된 점수 필드들 초기화
@@ -407,13 +406,18 @@ TerraformingMarsTracker.prototype.addGame = function() {
         coloniesDisplay.classList.add('hidden');
     }
     
-    // 플레이어 기업 선택 정보도 초기화
+    // 옵션 다시 업데이트 (먼저 실행)
+    this.updateAvailableOptions();
+    
+    // 플레이어 기업 선택 정보도 초기화 (나중에 실행)
     this.players.forEach(player => {
         player.selectedCorporation = null;
+        // 기업 드롭다운도 강제로 초기화
+        const corpSelect = document.getElementById(`corp${player.id}`);
+        if (corpSelect) {
+            corpSelect.value = '';
+        }
     });
-    
-    // 옵션 다시 업데이트
-    this.updateAvailableOptions();
 
     // UI 업데이트
     this.updateRanking();
