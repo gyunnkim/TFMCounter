@@ -44,7 +44,12 @@ export default async function handler(req, res) {
         if (req.method === 'GET') {
             // 데이터 조회
             const gameDataStr = await client.get(GAME_DATA_KEY);
-            const gameData = gameDataStr ? JSON.parse(gameDataStr) : defaultGameData;
+            const rawGameData = gameDataStr ? JSON.parse(gameDataStr) : defaultGameData;
+            const gameData = {
+                ...defaultGameData,
+                ...rawGameData,
+                selectedColonies: Array.isArray(rawGameData?.selectedColonies) ? rawGameData.selectedColonies : []
+            };
             const lastUpdated = await client.get(LAST_UPDATED_KEY) || new Date().toISOString();
             
             console.log(`데이터 조회: ${gameData.players?.length || 0}명 플레이어, ${gameData.games?.length || 0}개 게임`);

@@ -142,12 +142,10 @@ TerraformingMarsTracker.prototype.handleServerDataUpdate = function(data) {
             console.log('맵 선택 복원:', normalizedSelectedMap);
         }
 
-        // 선택된 개척기지 복원
-        if (data.selectedColonies && Array.isArray(data.selectedColonies)) {
-            this.selectedColonies = data.selectedColonies;
-            if (typeof this.displayColoniesInPage === 'function') {
-                this.displayColoniesInPage(this.selectedColonies);
-            }
+        // 선택된 개척기지 복원 (누락되면 빈 배열로 간주해서 기존 표시가 남지 않게 함)
+        this.selectedColonies = Array.isArray(data.selectedColonies) ? data.selectedColonies : [];
+        if (typeof this.displayColoniesInPage === 'function') {
+            this.displayColoniesInPage(this.selectedColonies);
         }
         
         console.log(`플레이어: ${oldPlayersLength} -> ${this.players.length}, 게임: ${oldGamesLength} -> ${this.games.length}`);
