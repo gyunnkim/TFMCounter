@@ -1,30 +1,46 @@
-// 레거시 데이터 관리 기능
+// 레거시 데이터 관리 기능 (클라이언트 사이드 다운로드)
 TerraformingMarsTracker.prototype.exportData = function() {
     if (this.games.length === 0) {
         alert('저장할 게임 데이터가 없습니다.');
         return;
     }
 
-    // 서버 API를 통해 games 디렉토리에 파일 저장
-    fetch(`${this.syncServerUrl}/api/export`)
-        .then(response => response.json())
-        .then(result => {
-            if (result.success) {
-                alert(`✅ 데이터 내보내기 완료!\n\n파일명: ${result.filename}\n게임 수: ${result.gameCount}게임\n저장 위치: games 디렉토리`);
-                
-                // 데이터 내보내기 후 현재 데이터 초기화 여부 확인
-                if (confirm('데이터를 games 디렉토리에 저장했습니다. 현재 게임 데이터를 초기화하시겠습니까?')) {
-                    this.clearCurrentData();
-                    alert('현재 데이터가 초기화되었습니다. 새로운 게임을 시작할 수 있습니다.');
-                }
-            } else {
-                alert(`❌ 데이터 내보내기 실패: ${result.message || '알 수 없는 오류'}`);
-            }
-        })
-        .catch(error => {
-            console.error('데이터 내보내기 오류:', error);
-            alert(`❌ 데이터 내보내기 중 오류가 발생했습니다: ${error.message}`);
-        });
+    try {
+        // 내보내기용 데이터 생성
+        const exportData = {
+            players: this.players,
+            games: this.games,
+            selectedMap: this.selectedMap || 'THARSIS',
+            exportDate: new Date().toISOString(),
+            exportedBy: 'TFM Counter Web App',
+            version: '2.0'
+        };
+
+        // JSON 파일로 다운로드
+        const filename = `tfm_data_${new Date().toISOString().split('T')[0]}.json`;
+        const dataStr = JSON.stringify(exportData, null, 2);
+        const dataBlob = new Blob([dataStr], { type: 'application/json' });
+        
+        // 다운로드 링크 생성
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(dataBlob);
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        alert(`✅ 데이터 내보내기 완료!\n\n파일명: ${filename}\n게임 수: ${this.games.length}게임\n플레이어 수: ${this.players.length}명`);
+        
+        // 데이터 내보내기 후 현재 데이터 초기화 여부 확인
+        if (confirm('데이터를 다운로드했습니다. 현재 게임 데이터를 초기화하시겠습니까?')) {
+            this.clearCurrentData();
+            alert('현재 데이터가 초기화되었습니다. 새로운 게임을 시작할 수 있습니다.');
+        }
+        
+    } catch (error) {
+        console.error('데이터 내보내기 오류:', error);
+        alert(`❌ 데이터 내보내기 중 오류가 발생했습니다: ${error.message}`);
+    }
 };
 
 TerraformingMarsTracker.prototype.importData = function(event) {
