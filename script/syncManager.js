@@ -18,8 +18,7 @@ TerraformingMarsTracker.prototype.initializeSync = function() {
     this.lastSyncTimestamp = null;
     this.syncInterval = null;
     
-    // 연결 상태 표시
-    this.createSyncIndicator();
+    // 연결 상태 표시 (제거됨)
     
     // 서버에서 초기 데이터 로드
     this.loadFromServer();

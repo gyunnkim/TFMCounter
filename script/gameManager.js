@@ -396,6 +396,17 @@ TerraformingMarsTracker.prototype.addGame = function() {
         document.getElementById(`totalScore${player.id}`).value = '';
     });
     
+    // 맵 선택 초기화
+    document.getElementById('mapSelect').value = '';
+    document.getElementById('selectedMapName').textContent = '맵을 선택해주세요';
+    document.getElementById('selectedMapName').classList.remove('selected');
+    
+    // 개척기지 표시 숨기기
+    const coloniesDisplay = document.getElementById('colonies-display');
+    if (coloniesDisplay) {
+        coloniesDisplay.classList.add('hidden');
+    }
+    
     // 옵션 다시 업데이트
     this.updateAvailableOptions();
 

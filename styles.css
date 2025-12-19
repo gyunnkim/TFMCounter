@@ -736,6 +736,55 @@ body > .cube-dropdown {
     gap: 5px;
 }
 
+/* 개척기지 표시 스타일 */
+.colonies-display {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #4299e1;
+}
+
+.colonies-display h3 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.colonies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.colony-item {
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.colony-item:hover {
+    transform: translateY(-2px);
+}
+
+.colony-icon {
+    font-size: 1.2rem;
+}
+
+.colony-name {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.hidden {
+    display: none !important;
+}
+
 @media (max-width: 768px) {
     .history-header {
         flex-direction: column;
@@ -746,5 +795,15 @@ body > .cube-dropdown {
     .history-stats {
         flex-direction: column;
         gap: 5px;
+    }
+    
+    .colonies-list {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+    }
+    
+    .colony-item {
+        padding: 8px;
+        font-size: 0.9rem;
     }
 }

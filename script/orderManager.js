@@ -404,7 +404,7 @@ TerraformingMarsTracker.prototype.randomizeColonies = function() {
     const selectedColonies = shuffledColonies.slice(0, colonyCount);
 
     // 결과 표시
-    this.showColonySelection(selectedColonies);
+    this.displayColoniesInPage(selectedColonies);
 };
 
 TerraformingMarsTracker.prototype.showColonySelection = function(selectedColonies) {
@@ -897,4 +897,23 @@ TerraformingMarsTracker.prototype.updateSelectedMapDisplay = function(mapValue) 
         
         console.log('맵 표시 업데이트:', mapNames[mapValue] || mapValue);
     }
+};
+
+// 페이지에 개척기지 표시하는 함수
+TerraformingMarsTracker.prototype.displayColoniesInPage = function(selectedColonies) {
+    const coloniesDisplay = document.getElementById('colonies-display');
+    const coloniesList = document.getElementById('colonies-list');
+    
+    // 개척기지 목록 HTML 생성
+    coloniesList.innerHTML = selectedColonies.map(colony => `
+        <div class="colony-item">
+            <span class="colony-icon">🌍</span>
+            <span class="colony-name">${colony}</span>
+        </div>
+    `).join('');
+    
+    // 표시 영역 보이기
+    coloniesDisplay.classList.remove('hidden');
+    
+    console.log('개척기지 표시:', selectedColonies);
 };
