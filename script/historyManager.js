@@ -47,6 +47,15 @@ TerraformingMarsTracker.prototype.updateHistory = function() {
 
             // 큐브 색상에 따른 이미지 결정
             const cubeIcon = result.cubeColor ? `img/${result.cubeColor}-square.svg` : 'img/black-square.svg';
+            
+            // 배지 HTML 생성
+            const badgesHtml = result.badges && result.badges.length > 0 
+                ? `<div class="badges" style="margin-top: 4px;">${result.badges.map(badge => 
+                    `<span class="badge" style="background-color: ${badge.color}; color: white; padding: 2px 6px; border-radius: 12px; font-size: 0.7rem; margin-right: 4px; display: inline-block;">
+                        ${badge.icon} ${badge.name}
+                    </span>`
+                ).join('')}</div>`
+                : '';
 
             resultDiv.innerHTML = `
                 <div><strong>${result.rank}등</strong></div>
@@ -57,6 +66,7 @@ TerraformingMarsTracker.prototype.updateHistory = function() {
                 <div>(${result.corporation})</div>
                 <div>점수: ${result.score}</div>
                 <div>💰 ${result.megacredits}</div>
+                ${badgesHtml}
             `;
             results.appendChild(resultDiv);
         });
