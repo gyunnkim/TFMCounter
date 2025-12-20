@@ -542,9 +542,6 @@ TerraformingMarsTracker.prototype.calculateTotalScore = function(playerId) {
         totalScore += value;
     });
     
-    // 총점 필드 업데이트
-    const totalScoreInput = document.getElementById(`totalScore${playerId}`);
-    totalScoreInput.value = totalScore;
 };
 
 // 배지 계산 함수
@@ -563,7 +560,7 @@ TerraformingMarsTracker.prototype.calculateBadges = function(gameResults) {
 
     // 1. 테라포머 배지 (TR 가장 높으면서 50점 넘음)
     const maxTR = Math.max(...gameResults.map(r => r.scoreBreakdown.tr));
-    if (maxTR >= 50) {
+    if (maxTR >= 45) {
         const terraformers = gameResults.filter(r => r.scoreBreakdown.tr === maxTR);
         terraformers.forEach(result => {
             result.badges.push({ name: '테라포머', icon: '🌍', color: '#4299e1' });
@@ -595,7 +592,7 @@ TerraformingMarsTracker.prototype.calculateBadges = function(gameResults) {
 
     // 5. 시장 배지 (도시 점수 가장 높음)
     const maxCity = Math.max(...gameResults.map(r => r.scoreBreakdown.city));
-    if (maxCity > 0) {
+    if (maxCity >= 12) {
         const mayors = gameResults.filter(r => r.scoreBreakdown.city === maxCity);
         if (mayors.length === 1) { // 단독 1위만
             mayors[0].badges.push({ name: '시장', icon: '🏙️', color: '#718096' });
@@ -604,7 +601,7 @@ TerraformingMarsTracker.prototype.calculateBadges = function(gameResults) {
 
     // 6. 임업가 배지 (숲 점수 가장 높음)
     const maxForest = Math.max(...gameResults.map(r => r.scoreBreakdown.forest));
-    if (maxForest > 0) {
+    if (maxForest >= 7) {
         const foresters = gameResults.filter(r => r.scoreBreakdown.forest === maxForest);
         if (foresters.length === 1) { // 단독 1위만
             foresters[0].badges.push({ name: '임업가', icon: '🌲', color: '#38a169' });
@@ -613,7 +610,7 @@ TerraformingMarsTracker.prototype.calculateBadges = function(gameResults) {
 
     // 7. 정치인 배지 (의회 점수 단독 가장 높음)
     const maxCongress = Math.max(...gameResults.map(r => r.scoreBreakdown.congress));
-    if (maxCongress > 0) {
+    if (maxCongress >= 4) {
         const politicians = gameResults.filter(r => r.scoreBreakdown.congress === maxCongress);
         if (politicians.length === 1) { // 단독 1위만
             politicians[0].badges.push({ name: '정치인', icon: '🏛️', color: '#e53e3e' });
@@ -622,7 +619,7 @@ TerraformingMarsTracker.prototype.calculateBadges = function(gameResults) {
 
     // 8. 수집가 배지 (카드점수 단독 가장 높음)
     const maxCards = Math.max(...gameResults.map(r => r.scoreBreakdown.cards));
-    if (maxCards > 0) {
+    if (maxCards >= 35) {
         const collectors = gameResults.filter(r => r.scoreBreakdown.cards === maxCards);
         if (collectors.length === 1) { // 단독 1위만
             collectors[0].badges.push({ name: '수집가', icon: '🃏', color: '#d69e2e' });
