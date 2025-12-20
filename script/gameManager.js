@@ -538,10 +538,15 @@ TerraformingMarsTracker.prototype.calculateTotalScore = function(playerId) {
     
     scoreFields.forEach(field => {
         const input = document.getElementById(`${field}${playerId}`);
+        if (!input) return;
         const value = parseInt(input.value) || 0;
         totalScore += value;
     });
-    
+
+    const totalScoreInput = document.getElementById(`totalScore${playerId}`);
+    if (totalScoreInput) {
+        totalScoreInput.value = totalScore;
+    }
 };
 
 // 배지 계산 함수
