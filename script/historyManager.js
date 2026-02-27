@@ -25,57 +25,190 @@ TerraformingMarsTracker.prototype.updateHistory = function() {
         container.appendChild(headerDiv);
     }
 
-    // 최신 게임부터 표시
-    [...this.games].reverse().forEach(game => {
-        const gameDiv = document.createElement('div');
-        gameDiv.className = 'game-history';
-
-        const header = document.createElement('div');
-        header.className = 'game-header';
-        const displayDate = game.dateDisplay || (typeof game.date === 'string' ? game.date : '');
-        header.innerHTML = `
-            <span>📅 ${displayDate} - 🗺️ ${game.map}</span>
-            <button onclick="tmTracker.deleteGame(${game.id})" class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;">삭제</button>
-        `;
-
-        const results = document.createElement('div');
-        results.className = 'game-results';
-
-        game.results.forEach(result => {
-            const resultDiv = document.createElement('div');
-            resultDiv.className = 'player-result';
-            if (result.rank === 1) resultDiv.classList.add('winner');
-
-            // 큐브 색상에 따른 이미지 결정
-            const cubeIcon = result.cubeColor ? `img/${result.cubeColor}-square.svg` : 'img/black-square.svg';
-            
-            // 배지 HTML 생성
-            const badgesHtml = result.badges && result.badges.length > 0 
-                ? `<div class="badges" style="margin-top: 4px;">${result.badges.map(badge => 
-                    `<span class="badge" style="background-color: ${badge.color}; color: white; padding: 2px 6px; border-radius: 12px; font-size: 0.7rem; margin-right: 4px; display: inline-block;">
-                        ${badge.icon} ${badge.name}
-                    </span>`
-                ).join('')}</div>`
-                : '';
-
-            resultDiv.innerHTML = `
-                <div><strong>${result.rank}등</strong></div>
-                <div class="player-info">
-                    <img src="${cubeIcon}" alt="${result.cubeColor} 큐브" class="cube-icon-small" style="width: 16px; height: 16px; margin-right: 4px;">
-                    ${result.playerName}
-                </div>
-                <div>(${result.corporation})</div>
-                <div>점수: ${result.score}</div>
-                <div>💰 ${result.megacredits}</div>
-                ${badgesHtml}
-            `;
-            results.appendChild(resultDiv);
-        });
-
-        gameDiv.appendChild(header);
-        gameDiv.appendChild(results);
-        container.appendChild(gameDiv);
+    // 연속 날짜 그룹화
+    const dateGroups = this.groupGamesByConsecutiveDates();
+    
+    // 탭 컨테이너 생성
+    const tabContainer = document.createElement('div');
+    tabContainer.className = 'history-tabs-container';
+    
+    // 탭 버튼들 생성
+    const tabButtons = document.createElement('div');
+    tabButtons.className = 'history-tabs';
+    
+    dateGroups.forEach((group, index) => {
+        const tabBtn = document.createElement('button');
+        tabBtn.className = 'history-tab-btn' + (index === 0 ? ' active' : '');
+        tabBtn.textContent = group.label;
+        tabBtn.dataset.tabIndex = index;
+        tabBtn.onclick = () => this.switchHistoryTab(index);
+        tabButtons.appendChild(tabBtn);
     });
+    
+    tabContainer.appendChild(tabButtons);
+    container.appendChild(tabContainer);
+    
+    // 탭 콘텐츠 생성
+    const tabContents = document.createElement('div');
+    tabContents.className = 'history-tab-contents';
+    
+    dateGroups.forEach((group, index) => {
+        const tabContent = document.createElement('div');
+        tabContent.className = 'history-tab-content' + (index === 0 ? ' active' : '');
+        tabContent.dataset.tabIndex = index;
+        
+        // 그룹 내 게임들 표시 (최신순)
+        group.games.forEach(game => {
+            const gameDiv = this.createGameHistoryElement(game);
+            tabContent.appendChild(gameDiv);
+        });
+        
+        tabContents.appendChild(tabContent);
+    });
+    
+    container.appendChild(tabContents);
+};
+
+// 연속 날짜 그룹화 함수
+TerraformingMarsTracker.prototype.groupGamesByConsecutiveDates = function() {
+    const parseGameDate = (game) => {
+        if (game.date instanceof Date) return game.date;
+        if (typeof game.date === 'string') {
+            const isoParsed = new Date(game.date);
+            if (!isNaN(isoParsed.getTime())) return isoParsed;
+            const m = game.date.match(/^(\d{4})\.\s*(\d{1,2})\.\s*(\d{1,2})\.?$/);
+            if (m) {
+                const y = parseInt(m[1], 10);
+                const mo = parseInt(m[2], 10) - 1;
+                const d = parseInt(m[3], 10);
+                return new Date(y, mo, d);
+            }
+        }
+        return new Date(NaN);
+    };
+    
+    const formatDate = (date) => {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, '0');
+        const d = String(date.getDate()).padStart(2, '0');
+        return `${y}.${m}.${d}.`;
+    };
+    
+    // 게임을 날짜별로 정렬 (최신순)
+    const gamesWithDates = this.games.map(game => ({
+        game,
+        date: parseGameDate(game)
+    })).filter(item => !isNaN(item.date.getTime()));
+    
+    gamesWithDates.sort((a, b) => b.date - a.date);
+    
+    if (gamesWithDates.length === 0) return [];
+    
+    const groups = [];
+    let currentGroup = {
+        games: [gamesWithDates[0].game],
+        startDate: gamesWithDates[0].date,
+        endDate: gamesWithDates[0].date
+    };
+    
+    for (let i = 1; i < gamesWithDates.length; i++) {
+        const currentDate = gamesWithDates[i].date;
+        const prevDate = gamesWithDates[i - 1].date;
+        
+        // 날짜 차이 계산 (일 단위)
+        const diffDays = Math.round((prevDate - currentDate) / (1000 * 60 * 60 * 24));
+        
+        if (diffDays <= 1) {
+            // 연속된 날짜 (같은 날 또는 하루 차이)
+            currentGroup.games.push(gamesWithDates[i].game);
+            currentGroup.endDate = currentDate;
+        } else {
+            // 새 그룹 시작
+            groups.push(currentGroup);
+            currentGroup = {
+                games: [gamesWithDates[i].game],
+                startDate: currentDate,
+                endDate: currentDate
+            };
+        }
+    }
+    groups.push(currentGroup);
+    
+    // 라벨 생성
+    groups.forEach(group => {
+        const start = formatDate(group.endDate);  // endDate가 더 과거
+        const end = formatDate(group.startDate);  // startDate가 더 최신
+        if (start === end) {
+            group.label = start.replace(/\.$/, '');
+        } else {
+            group.label = `${start.replace(/\.$/, '')}~${end.replace(/\.$/, '')}`;
+        }
+    });
+    
+    return groups;
+};
+
+// 히스토리 탭 전환
+TerraformingMarsTracker.prototype.switchHistoryTab = function(index) {
+    // 탭 버튼 활성화 상태 변경
+    document.querySelectorAll('.history-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', parseInt(btn.dataset.tabIndex) === index);
+    });
+    
+    // 탭 콘텐츠 활성화 상태 변경
+    document.querySelectorAll('.history-tab-content').forEach(content => {
+        content.classList.toggle('active', parseInt(content.dataset.tabIndex) === index);
+    });
+};
+
+// 게임 히스토리 요소 생성
+TerraformingMarsTracker.prototype.createGameHistoryElement = function(game) {
+    const gameDiv = document.createElement('div');
+    gameDiv.className = 'game-history';
+
+    const header = document.createElement('div');
+    header.className = 'game-header';
+    const displayDate = game.dateDisplay || (typeof game.date === 'string' ? game.date : '');
+    header.innerHTML = `
+        <span>📅 ${displayDate} - 🗺️ ${game.map}</span>
+        <button onclick="tmTracker.deleteGame(${game.id})" class="btn btn-danger" style="padding: 5px 10px; font-size: 0.8rem;">삭제</button>
+    `;
+
+    const results = document.createElement('div');
+    results.className = 'game-results';
+
+    game.results.forEach(result => {
+        const resultDiv = document.createElement('div');
+        resultDiv.className = 'player-result';
+        if (result.rank === 1) resultDiv.classList.add('winner');
+
+        const cubeIcon = result.cubeColor ? `img/${result.cubeColor}-square.svg` : 'img/black-square.svg';
+        
+        const badgesHtml = result.badges && result.badges.length > 0 
+            ? `<div class="badges" style="margin-top: 4px;">${result.badges.map(badge => 
+                `<span class="badge" style="background-color: ${badge.color}; color: white; padding: 2px 6px; border-radius: 12px; font-size: 0.7rem; margin-right: 4px; display: inline-block;">
+                    ${badge.icon} ${badge.name}
+                </span>`
+            ).join('')}</div>`
+            : '';
+
+        resultDiv.innerHTML = `
+            <div><strong>${result.rank}등</strong></div>
+            <div class="player-info">
+                <img src="${cubeIcon}" alt="${result.cubeColor} 큐브" class="cube-icon-small" style="width: 16px; height: 16px; margin-right: 4px;">
+                ${result.playerName}
+            </div>
+            <div>(${result.corporation})</div>
+            <div>점수: ${result.score}</div>
+            <div>💰 ${result.megacredits}</div>
+            ${badgesHtml}
+        `;
+        results.appendChild(resultDiv);
+    });
+
+    gameDiv.appendChild(header);
+    gameDiv.appendChild(results);
+    return gameDiv;
 };
 
 // 날짜 범위 계산

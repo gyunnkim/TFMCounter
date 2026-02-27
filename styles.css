@@ -785,6 +785,56 @@ body > .cube-dropdown {
     display: none !important;
 }
 
+/* 히스토리 탭 스타일 */
+.history-tabs-container {
+    margin-bottom: 20px;
+}
+
+.history-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 0;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 15px;
+}
+
+.history-tab-btn {
+    padding: 8px 16px;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.history-tab-btn:hover {
+    background: #f0f4ff;
+    transform: translateY(-1px);
+}
+
+.history-tab-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.history-tab-contents {
+    position: relative;
+}
+
+.history-tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.history-tab-content.active {
+    display: block;
+}
+
 @media (max-width: 768px) {
     .history-header {
         flex-direction: column;
@@ -795,6 +845,17 @@ body > .cube-dropdown {
     .history-stats {
         flex-direction: column;
         gap: 5px;
+    }
+    
+    .history-tabs {
+        justify-content: center;
+        max-height: 150px;
+        overflow-y: auto;
+    }
+    
+    .history-tab-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
     
     .colonies-list {
