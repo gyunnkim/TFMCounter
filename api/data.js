@@ -104,7 +104,9 @@ export default async function handler(req, res) {
         res.status(500).json({
             success: false,
             message: '서버 오류가 발생했습니다.',
-            error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
+            error: error.message,
+            hasKvUrl: !!process.env.KV_REST_API_URL,
+            hasKvToken: !!process.env.KV_REST_API_TOKEN
         });
     }
 }
