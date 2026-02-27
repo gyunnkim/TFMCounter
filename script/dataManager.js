@@ -185,8 +185,75 @@ TerraformingMarsTracker.prototype.mergeLegacyData = function(legacyData) {
     this.updateHistory();
     this.saveData();
     
-    // 서버 동기화
+    // 서버 동기화 (완료 대기)
     if (this.syncToServer) {
-        this.syncToServer('mergeLegacy', { players: this.players, games: this.games });
+        this.syncToServerAndWait('mergeLegacy');
     }
+};
+
+// 서버 동기화 완료 대기 (데이터 불러오기용)
+TerraformingMarsTracker.prototype.syncToServerAndWait = function(type) {
+    // 로딩 표시
+    const loadingDiv = document.createElement('div');
+    loadingDiv.id = 'sync-loading';
+    loadingDiv.innerHTML = `
+        <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 9999;">
+            <div style="background: white; padding: 30px; border-radius: 10px; text-align: center;">
+                <div style="font-size: 24px; margin-bottom: 10px;">⏳</div>
+                <div>서버에 데이터 저장 중...</div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(loadingDiv);
+    
+    // 서버 전송 중 플래그 설정
+    this.isSyncingToServer = true;
+    
+    let normalizedSelectedMap = this.selectedMap;
+    if (normalizedSelectedMap && typeof normalizedSelectedMap === 'object' && 'value' in normalizedSelectedMap) {
+        normalizedSelectedMap = normalizedSelectedMap.value;
+    }
+
+    const fullData = {
+        players: this.players,
+        games: this.games,
+        selectedMap: (normalizedSelectedMap === undefined || normalizedSelectedMap === null) ? 'THARSIS' : normalizedSelectedMap,
+        selectedColonies: Array.isArray(this.selectedColonies) ? this.selectedColonies : []
+    };
+    
+    console.log('서버로 데이터 전송 (대기):', type, fullData);
+    
+    fetch(`${this.syncServerUrl}/api/data`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(fullData)
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log('서버 동기화 완료:', result);
+        
+        if (result.lastUpdated) {
+            this.lastSyncTimestamp = result.lastUpdated;
+        }
+        
+        this.isSyncingToServer = false;
+        
+        // 로딩 제거
+        const loading = document.getElementById('sync-loading');
+        if (loading) loading.remove();
+        
+        alert(`✅ 데이터가 서버에 저장되었습니다!\n\n플레이어: ${this.players.length}명\n게임: ${this.games.length}게임`);
+    })
+    .catch(error => {
+        console.error('서버 동기화 실패:', error);
+        this.isSyncingToServer = false;
+        
+        // 로딩 제거
+        const loading = document.getElementById('sync-loading');
+        if (loading) loading.remove();
+        
+        alert('⚠️ 서버 저장에 실패했습니다. 로컬에만 저장되었습니다.');
+    });
 };
