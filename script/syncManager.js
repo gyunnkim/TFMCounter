@@ -302,6 +302,12 @@ TerraformingMarsTracker.prototype.startPeriodicSync = function() {
 
 // 업데이트 확인
 TerraformingMarsTracker.prototype.checkForUpdates = function() {
+    // 서버로 데이터 전송 중이면 동기화 체크 건너뛰기
+    if (this.isSyncingToServer) {
+        console.log('서버 전송 중, 동기화 체크 건너뜀');
+        return;
+    }
+    
     const url = `${this.syncServerUrl}/api/sync?timestamp=${encodeURIComponent(this.lastSyncTimestamp || '')}`;
     
     console.log('업데이트 확인:', url, '현재 타임스탬프:', this.lastSyncTimestamp);
@@ -342,6 +348,9 @@ TerraformingMarsTracker.prototype.debugPlayerStats = function() {
 
 // 서버로 데이터 전송
 TerraformingMarsTracker.prototype.syncToServer = function(type, data) {
+    // 서버 전송 중 플래그 설정 (동기화 체크 방지)
+    this.isSyncingToServer = true;
+    
     let normalizedSelectedMap = this.selectedMap;
     // 객체로 들어온 경우 문자열로 정규화
     if (normalizedSelectedMap && typeof normalizedSelectedMap === 'object' && 'value' in normalizedSelectedMap) {
@@ -377,9 +386,13 @@ TerraformingMarsTracker.prototype.syncToServer = function(type, data) {
         if (result.lastUpdated) {
             this.lastSyncTimestamp = result.lastUpdated;
         }
+        
+        // 전송 완료 후 플래그 해제
+        this.isSyncingToServer = false;
     })
     .catch(error => {
         console.error('서버 동기화 실패:', error);
         this.updateSyncIndicator(false);
+        this.isSyncingToServer = false;
     });
 };
