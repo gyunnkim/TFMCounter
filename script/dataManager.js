@@ -92,12 +92,20 @@ TerraformingMarsTracker.prototype.saveData = function() {
 };
 
 TerraformingMarsTracker.prototype.loadData = function() {
+    // 서버에서 데이터를 이미 로드했으면 로컬 데이터 무시
+    if (this.serverDataLoaded) {
+        console.log('서버 데이터가 이미 로드됨, 로컬 데이터 로드 건너뜀');
+        return;
+    }
+    
     const savedData = localStorage.getItem('terraformingMarsData');
     if (savedData) {
         try {
             const data = JSON.parse(savedData);
             this.players = data.players || [];
             this.games = data.games || [];
+            
+            console.log(`로컬 데이터 로드: ${this.players.length}명 플레이어, ${this.games.length}게임`);
             
             if (this.players.length > 0) {
                 document.getElementById('player-setup').classList.add('hidden');

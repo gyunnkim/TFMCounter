@@ -278,12 +278,18 @@ TerraformingMarsTracker.prototype.loadFromServer = function() {
         })
         .then(data => {
             console.log('서버에서 데이터 로드 성공:', data);
+            // 서버에 유효한 데이터가 있으면 플래그 설정
+            if (data.players && data.players.length > 0) {
+                this.serverDataLoaded = true;
+            }
             this.handleServerDataUpdate(data);
             this.updateSyncIndicator(true);
         })
         .catch(error => {
             console.error('서버 데이터 로드 실패:', error);
             this.updateSyncIndicator(false);
+            // 서버 실패 시 로컬 데이터 로드
+            this.loadData();
         });
 };
 

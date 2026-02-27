@@ -61,11 +61,8 @@ class TerraformingMarsTracker {
         // 스와이프 기능 추가
         this.initializeSwipe();
         
-        // 동기화 초기화
+        // 동기화 초기화 (서버에서 데이터 로드, 실패 시 로컬 데이터 로드)
         this.initializeSync();
-        
-        // 초기 데이터 로드
-        this.loadData();
         
         // 저장된 맵 선택 복원
         if (this.selectedMap) {
