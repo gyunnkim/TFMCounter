@@ -196,6 +196,9 @@ TerraformingMarsTracker.prototype.groupGamesByConsecutiveDates = function() {
 
 // 히스토리 탭 전환
 TerraformingMarsTracker.prototype.switchHistoryTab = function(index) {
+    // 현재 선택된 탭 저장
+    this.currentHistoryTab = index;
+    
     // 탭 버튼 활성화 상태 변경
     document.querySelectorAll('.history-tab-btn').forEach(btn => {
         const btnIndex = btn.dataset.tabIndex;
@@ -210,6 +213,157 @@ TerraformingMarsTracker.prototype.switchHistoryTab = function(index) {
     
     // 헤더 통계 업데이트
     this.updateHistoryHeader(index);
+    
+    // 랭킹 업데이트 (해당 탭의 게임 데이터로)
+    this.updateRankingForTab(index);
+};
+
+// 탭에 맞는 게임 데이터 가져오기
+TerraformingMarsTracker.prototype.getGamesForTab = function(tabIndex) {
+    if (tabIndex === 'all') {
+        return this.games;
+    } else {
+        const groupIndex = parseInt(tabIndex);
+        const group = this.historyDateGroups[groupIndex];
+        return group ? group.games : [];
+    }
+};
+
+// 탭에 맞는 랭킹 업데이트
+TerraformingMarsTracker.prototype.updateRankingForTab = function(tabIndex) {
+    const games = this.getGamesForTab(tabIndex);
+    
+    // 해당 게임들로 플레이어 통계 계산
+    const playerStats = this.calculatePlayerStatsFromGames(games);
+    
+    // 랭킹 UI 업데이트
+    this.updatePlayerRankingWithStats(playerStats);
+    this.updateCorporationRankingForGames(games);
+    this.updateMapRankingForGames(games);
+};
+
+// 게임 목록에서 플레이어 통계 계산
+TerraformingMarsTracker.prototype.calculatePlayerStatsFromGames = function(games) {
+    const stats = {};
+    
+    games.forEach(game => {
+        game.results.forEach(result => {
+            const name = result.playerName;
+            if (!stats[name]) {
+                stats[name] = {
+                    name: name,
+                    totalGames: 0,
+                    totalScore: 0,
+                    wins: 0,
+                    seconds: 0,
+                    thirds: 0,
+                    fourths: 0,
+                    averageScore: 0
+                };
+            }
+            
+            stats[name].totalGames++;
+            stats[name].totalScore += result.score;
+            
+            if (result.rank === 1) stats[name].wins++;
+            else if (result.rank === 2) stats[name].seconds++;
+            else if (result.rank === 3) stats[name].thirds++;
+            else if (result.rank === 4) stats[name].fourths++;
+        });
+    });
+    
+    // 평균 점수 계산
+    Object.values(stats).forEach(player => {
+        if (player.totalGames > 0) {
+            player.averageScore = Math.round((player.totalScore / player.totalGames) * 10) / 10;
+        }
+    });
+    
+    return Object.values(stats);
+};
+
+// 통계 데이터로 플레이어 랭킹 업데이트
+TerraformingMarsTracker.prototype.updatePlayerRankingWithStats = function(playerStats) {
+    const container = document.getElementById('player-ranking');
+    
+    if (playerStats.length === 0) {
+        container.innerHTML = '<p>해당 기간에 게임 기록이 없습니다.</p>';
+        return;
+    }
+
+    // 랭킹 계산 로직
+    const rankedPlayers = [...playerStats].sort((a, b) => {
+        if (a.wins !== b.wins) return b.wins - a.wins;
+        if (a.seconds !== b.seconds) return b.seconds - a.seconds;
+        if (a.thirds !== b.thirds) return b.thirds - a.thirds;
+        return b.averageScore - a.averageScore;
+    });
+
+    container.innerHTML = '';
+
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) {
+        const header = document.createElement('div');
+        header.className = 'ranking-item ranking-header-row';
+        header.innerHTML = `
+            <div class="rank-number"><strong>순위</strong></div>
+            <div class="player-name"><strong>플레이어</strong></div>
+            <div class="stat"><strong>1등</strong></div>
+            <div class="stat"><strong>2등</strong></div>
+            <div class="stat"><strong>3등</strong></div>
+            <div class="stat"><strong>평균점수</strong></div>
+        `;
+        header.style.background = '#4a5568';
+        header.style.color = 'white';
+        header.style.marginBottom = '5px';
+        container.appendChild(header);
+    }
+
+    rankedPlayers.forEach((player, index) => {
+        const rankingDiv = document.createElement('div');
+        rankingDiv.className = 'ranking-item';
+        
+        if (index === 0) rankingDiv.classList.add('first');
+        else if (index === 1) rankingDiv.classList.add('second');
+        else if (index === 2) rankingDiv.classList.add('third');
+
+        if (isMobile) {
+            rankingDiv.classList.add('card-layout');
+            rankingDiv.innerHTML = `
+                <div class="rank-number">${index + 1}등</div>
+                <div class="player-name">${player.name}</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">1등</span>
+                        <span class="stat-value">${player.wins}회</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">2등</span>
+                        <span class="stat-value">${player.seconds}회</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">3등</span>
+                        <span class="stat-value">${player.thirds}회</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">평균점수</span>
+                        <span class="stat-value">${player.averageScore}점</span>
+                    </div>
+                </div>
+            `;
+        } else {
+            rankingDiv.innerHTML = `
+                <div class="rank-number">${index + 1}</div>
+                <div class="player-name">${player.name}</div>
+                <div class="stat">${player.wins}</div>
+                <div class="stat">${player.seconds}</div>
+                <div class="stat">${player.thirds}</div>
+                <div class="stat">${player.averageScore}</div>
+            `;
+        }
+        
+        container.appendChild(rankingDiv);
+    });
 };
 
 // 히스토리 헤더 통계 업데이트

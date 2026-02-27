@@ -12,9 +12,10 @@ except ImportError:
     print("openpyxl이 설치되어 있지 않습니다. 설치해주세요: pip install openpyxl")
     sys.exit(1)
 
-def parse_game_data(worksheet, date_str, year):
-    """워크시트에서 게임 데이터를 파싱"""
+def parse_game_data(worksheet, initial_date_str, year):
+    """워크시트에서 게임 데이터를 파싱 (시트 중간에 날짜가 있는 경우도 처리)"""
     games = []
+    current_date_str = initial_date_str
     
     # 플레이어 이름 찾기 (보통 3행에 있음)
     players = []
@@ -31,8 +32,16 @@ def parse_game_data(worksheet, date_str, year):
     max_row = worksheet.max_row
     
     while current_row <= max_row:
+        cell_a = worksheet.cell(row=current_row, column=1).value
+        
+        # 날짜 셀인지 확인 (datetime 객체인 경우)
+        if cell_a and hasattr(cell_a, 'strftime'):
+            current_date_str = cell_a.strftime('%Y. %m. %d.')
+            current_row += 1
+            continue
+        
         # 세트 정보 확인
-        set_info = worksheet.cell(row=current_row, column=1).value
+        set_info = cell_a
         if not set_info or 'set' not in str(set_info).lower():
             current_row += 1
             continue
@@ -105,7 +114,7 @@ def parse_game_data(worksheet, date_str, year):
         map_normalized = normalize_map_name(map_name)
         
         games.append({
-            'date': date_str,
+            'date': current_date_str,
             'map': map_normalized,
             'results': game_results,
             'year': year

@@ -1,16 +1,21 @@
 // 기업별 랭킹 기능
 TerraformingMarsTracker.prototype.updateCorporationRanking = function() {
+    this.updateCorporationRankingForGames(this.games);
+};
+
+// 특정 게임 목록으로 기업별 랭킹 업데이트
+TerraformingMarsTracker.prototype.updateCorporationRankingForGames = function(games) {
     const container = document.getElementById('corporation-ranking');
     
-    if (this.games.length === 0) {
-        container.innerHTML = '<p>아직 게임 기록이 없습니다.</p>';
+    if (games.length === 0) {
+        container.innerHTML = '<p>해당 기간에 게임 기록이 없습니다.</p>';
         return;
     }
 
     // 기업별 통계 계산
     const corporationStats = {};
     
-    this.games.forEach(game => {
+    games.forEach(game => {
         game.results.forEach(result => {
             if (!corporationStats[result.corporation]) {
                 corporationStats[result.corporation] = {
@@ -87,7 +92,7 @@ TerraformingMarsTracker.prototype.updateCorporationRanking = function() {
         </div>
         <div class="map-stat-item">
             <div class="map-stat-label">총 게임 수</div>
-            <div class="map-stat-value">${this.games.length}게임</div>
+            <div class="map-stat-value">${games.length}게임</div>
         </div>
         <div class="map-stat-item">
             <div class="map-stat-label">최고 승률</div>

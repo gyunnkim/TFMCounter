@@ -1,16 +1,21 @@
 // 맵별 랭킹 기능
 TerraformingMarsTracker.prototype.updateMapRanking = function() {
+    this.updateMapRankingForGames(this.games);
+};
+
+// 특정 게임 목록으로 맵별 랭킹 업데이트
+TerraformingMarsTracker.prototype.updateMapRankingForGames = function(games) {
     const container = document.getElementById('map-ranking');
     
-    if (this.games.length === 0) {
-        container.innerHTML = '<p>아직 게임 기록이 없습니다.</p>';
+    if (games.length === 0) {
+        container.innerHTML = '<p>해당 기간에 게임 기록이 없습니다.</p>';
         return;
     }
 
     // 맵별 통계 계산
     const mapStats = {};
     
-    this.games.forEach(game => {
+    games.forEach(game => {
         if (!mapStats[game.map]) {
             mapStats[game.map] = {
                 totalGames: 0,
