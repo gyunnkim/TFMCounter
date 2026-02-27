@@ -15,8 +15,8 @@ TerraformingMarsTracker.prototype.updateHistory = function() {
         headerDiv.className = 'history-header';
         headerDiv.innerHTML = `
             <div class="history-stats">
-                <span>📊 총 ${this.games.length}게임</span>
-                <span>📅 ${this.getDateRange()}</span>
+                <span id="history-game-count">📊 총 ${this.games.length}게임</span>
+                <span id="history-date-range">📅 ${this.getDateRange()}</span>
             </div>
             <button onclick="tmTracker.exportHistoryData()" class="btn btn-success" style="padding: 8px 16px; font-size: 0.9rem;">
                 📁 히스토리 내보내기
@@ -28,6 +28,9 @@ TerraformingMarsTracker.prototype.updateHistory = function() {
     // 연속 날짜 그룹화
     const dateGroups = this.groupGamesByConsecutiveDates();
     
+    // 그룹 정보 저장 (탭 전환 시 헤더 업데이트용)
+    this.historyDateGroups = dateGroups;
+    
     // 탭 컨테이너 생성
     const tabContainer = document.createElement('div');
     tabContainer.className = 'history-tabs-container';
@@ -36,9 +39,17 @@ TerraformingMarsTracker.prototype.updateHistory = function() {
     const tabButtons = document.createElement('div');
     tabButtons.className = 'history-tabs';
     
+    // "전체" 탭 추가
+    const allTabBtn = document.createElement('button');
+    allTabBtn.className = 'history-tab-btn active';
+    allTabBtn.textContent = '전체';
+    allTabBtn.dataset.tabIndex = 'all';
+    allTabBtn.onclick = () => this.switchHistoryTab('all');
+    tabButtons.appendChild(allTabBtn);
+    
     dateGroups.forEach((group, index) => {
         const tabBtn = document.createElement('button');
-        tabBtn.className = 'history-tab-btn' + (index === 0 ? ' active' : '');
+        tabBtn.className = 'history-tab-btn';
         tabBtn.textContent = group.label;
         tabBtn.dataset.tabIndex = index;
         tabBtn.onclick = () => this.switchHistoryTab(index);
@@ -52,9 +63,25 @@ TerraformingMarsTracker.prototype.updateHistory = function() {
     const tabContents = document.createElement('div');
     tabContents.className = 'history-tab-contents';
     
+    // "전체" 탭 콘텐츠
+    const allTabContent = document.createElement('div');
+    allTabContent.className = 'history-tab-content active';
+    allTabContent.dataset.tabIndex = 'all';
+    
+    // 전체 게임 표시 (최신순)
+    [...this.games].sort((a, b) => {
+        const dateA = this.parseGameDateForSort(a);
+        const dateB = this.parseGameDateForSort(b);
+        return dateB - dateA;
+    }).forEach(game => {
+        const gameDiv = this.createGameHistoryElement(game);
+        allTabContent.appendChild(gameDiv);
+    });
+    tabContents.appendChild(allTabContent);
+    
     dateGroups.forEach((group, index) => {
         const tabContent = document.createElement('div');
-        tabContent.className = 'history-tab-content' + (index === 0 ? ' active' : '');
+        tabContent.className = 'history-tab-content';
         tabContent.dataset.tabIndex = index;
         
         // 그룹 내 게임들 표시 (최신순)
@@ -69,13 +96,32 @@ TerraformingMarsTracker.prototype.updateHistory = function() {
     container.appendChild(tabContents);
 };
 
+// 날짜 파싱 (정렬용)
+TerraformingMarsTracker.prototype.parseGameDateForSort = function(game) {
+    if (game.date instanceof Date) return game.date;
+    if (typeof game.date === 'string') {
+        const isoParsed = new Date(game.date);
+        if (!isNaN(isoParsed.getTime())) return isoParsed;
+        const m = game.date.match(/^(\d{4})\.\s*(\d{1,2})\.\s*(\d{1,2})\.?$/);
+        if (m) {
+            return new Date(parseInt(m[1], 10), parseInt(m[2], 10) - 1, parseInt(m[3], 10));
+        }
+    }
+    return new Date(NaN);
+};
+
 // 연속 날짜 그룹화 함수
 TerraformingMarsTracker.prototype.groupGamesByConsecutiveDates = function() {
+    // 날짜만 추출 (시간 제거)
+    const getDateOnly = (date) => {
+        return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    };
+    
     const parseGameDate = (game) => {
-        if (game.date instanceof Date) return game.date;
+        if (game.date instanceof Date) return getDateOnly(game.date);
         if (typeof game.date === 'string') {
             const isoParsed = new Date(game.date);
-            if (!isNaN(isoParsed.getTime())) return isoParsed;
+            if (!isNaN(isoParsed.getTime())) return getDateOnly(isoParsed);
             const m = game.date.match(/^(\d{4})\.\s*(\d{1,2})\.\s*(\d{1,2})\.?$/);
             if (m) {
                 const y = parseInt(m[1], 10);
@@ -115,7 +161,7 @@ TerraformingMarsTracker.prototype.groupGamesByConsecutiveDates = function() {
         const currentDate = gamesWithDates[i].date;
         const prevDate = gamesWithDates[i - 1].date;
         
-        // 날짜 차이 계산 (일 단위)
+        // 날짜 차이 계산 (일 단위) - 시간이 제거되어 정확함
         const diffDays = Math.round((prevDate - currentDate) / (1000 * 60 * 60 * 24));
         
         if (diffDays <= 1) {
@@ -152,13 +198,41 @@ TerraformingMarsTracker.prototype.groupGamesByConsecutiveDates = function() {
 TerraformingMarsTracker.prototype.switchHistoryTab = function(index) {
     // 탭 버튼 활성화 상태 변경
     document.querySelectorAll('.history-tab-btn').forEach(btn => {
-        btn.classList.toggle('active', parseInt(btn.dataset.tabIndex) === index);
+        const btnIndex = btn.dataset.tabIndex;
+        btn.classList.toggle('active', btnIndex === String(index));
     });
     
     // 탭 콘텐츠 활성화 상태 변경
     document.querySelectorAll('.history-tab-content').forEach(content => {
-        content.classList.toggle('active', parseInt(content.dataset.tabIndex) === index);
+        const contentIndex = content.dataset.tabIndex;
+        content.classList.toggle('active', contentIndex === String(index));
     });
+    
+    // 헤더 통계 업데이트
+    this.updateHistoryHeader(index);
+};
+
+// 히스토리 헤더 통계 업데이트
+TerraformingMarsTracker.prototype.updateHistoryHeader = function(tabIndex) {
+    const gameCountEl = document.getElementById('history-game-count');
+    const dateRangeEl = document.getElementById('history-date-range');
+    
+    if (!gameCountEl || !dateRangeEl) return;
+    
+    if (tabIndex === 'all') {
+        // 전체 탭
+        gameCountEl.textContent = `📊 총 ${this.games.length}게임`;
+        dateRangeEl.textContent = `📅 ${this.getDateRange()}`;
+    } else {
+        // 특정 날짜 그룹 탭
+        const groupIndex = parseInt(tabIndex);
+        const group = this.historyDateGroups[groupIndex];
+        
+        if (group) {
+            gameCountEl.textContent = `📊 총 ${group.games.length}게임`;
+            dateRangeEl.textContent = `📅 ${group.label}`;
+        }
+    }
 };
 
 // 게임 히스토리 요소 생성
