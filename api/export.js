@@ -1,17 +1,18 @@
 import { createClient } from 'redis';
 
-// Redis 클라이언트 생성
-let redis;
+// Redis 클라이언트 생성 (Serverless 환경용 - 매 요청마다 새 연결)
 const getRedisClient = async () => {
-    if (!redis) {
-        redis = createClient({
-            url: process.env.REDIS_URL
-        });
-        
-        redis.on('error', (err) => console.log('Redis Client Error', err));
-        await redis.connect();
-    }
-    return redis;
+    const client = createClient({
+        url: process.env.REDIS_URL,
+        socket: {
+            connectTimeout: 5000,
+            reconnectStrategy: false
+        }
+    });
+    
+    client.on('error', (err) => console.log('Redis Client Error', err));
+    await client.connect();
+    return client;
 };
 
 const GAME_DATA_KEY = 'terraforming_mars_data';
@@ -28,8 +29,9 @@ export default async function handler(req, res) {
     }
     
     if (req.method === 'GET') {
+        let client;
         try {
-            const client = await getRedisClient();
+            client = await getRedisClient();
             const gameDataStr = await client.get(GAME_DATA_KEY);
             const gameData = gameDataStr ? JSON.parse(gameDataStr) : { players: [], games: [] };
             
@@ -53,6 +55,10 @@ export default async function handler(req, res) {
                 success: false,
                 message: '데이터 내보내기 중 오류가 발생했습니다.'
             });
+        } finally {
+            if (client) {
+                await client.quit().catch(() => {});
+            }
         }
     } else {
         res.status(405).json({ 

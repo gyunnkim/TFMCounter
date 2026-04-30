@@ -1,17 +1,18 @@
 import { createClient } from 'redis';
 
-// Redis 클라이언트 생성
-let redis;
+// Redis 클라이언트 생성 (Serverless 환경용 - 매 요청마다 새 연결)
 const getRedisClient = async () => {
-    if (!redis) {
-        redis = createClient({
-            url: process.env.REDIS_URL
-        });
-        
-        redis.on('error', (err) => console.log('Redis Client Error', err));
-        await redis.connect();
-    }
-    return redis;
+    const client = createClient({
+        url: process.env.REDIS_URL,
+        socket: {
+            connectTimeout: 5000,
+            reconnectStrategy: false
+        }
+    });
+    
+    client.on('error', (err) => console.log('Redis Client Error', err));
+    await client.connect();
+    return client;
 };
 
 // 데이터 키 상수
@@ -38,8 +39,9 @@ export default async function handler(req, res) {
         return;
     }
     
+    let client;
     try {
-        const client = await getRedisClient();
+        client = await getRedisClient();
         
         if (req.method === 'GET') {
             // 데이터 조회
@@ -124,5 +126,9 @@ export default async function handler(req, res) {
             error: error.message,
             hasRedisUrl: !!process.env.REDIS_URL
         });
+    } finally {
+        if (client) {
+            await client.quit().catch(() => {});
+        }
     }
 }
