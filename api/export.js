@@ -1,18 +1,4 @@
-import { createClient } from 'redis';
-
-// Redis 클라이언트 생성
-let redis;
-const getRedisClient = async () => {
-    if (!redis) {
-        redis = createClient({
-            url: process.env.REDIS_URL
-        });
-        
-        redis.on('error', (err) => console.log('Redis Client Error', err));
-        await redis.connect();
-    }
-    return redis;
-};
+import { kv } from '@vercel/kv';
 
 const GAME_DATA_KEY = 'terraforming_mars_data';
 
@@ -29,9 +15,7 @@ export default async function handler(req, res) {
     
     if (req.method === 'GET') {
         try {
-            const client = await getRedisClient();
-            const gameDataStr = await client.get(GAME_DATA_KEY);
-            const gameData = gameDataStr ? JSON.parse(gameDataStr) : { players: [], games: [] };
+            const gameData = await kv.get(GAME_DATA_KEY) || { players: [], games: [] };
             
             // 내보내기용 데이터 생성
             const exportData = {
