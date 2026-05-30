@@ -274,6 +274,11 @@ TerraformingMarsTracker.prototype.loadFromServer = function() {
     fetch(`${this.syncServerUrl}/api/data`)
         .then(response => {
             console.log('서버 응답 상태:', response.status);
+            if (!response.ok) {
+                return response.json().catch(() => ({})).then(errorBody => {
+                    throw new Error(errorBody.message || `서버 응답 오류: ${response.status}`);
+                });
+            }
             return response.json();
         })
         .then(data => {
@@ -313,7 +318,14 @@ TerraformingMarsTracker.prototype.checkForUpdates = function() {
     console.log('업데이트 확인:', url, '현재 타임스탬프:', this.lastSyncTimestamp);
     
     fetch(url)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                return response.json().catch(() => ({})).then(errorBody => {
+                    throw new Error(errorBody.message || `서버 응답 오류: ${response.status}`);
+                });
+            }
+            return response.json();
+        })
         .then(result => {
             console.log('동기화 체크 결과:', result);
             if (result.needsUpdate && result.data) {
@@ -376,6 +388,11 @@ TerraformingMarsTracker.prototype.syncToServer = function(type, data) {
     })
     .then(response => {
         console.log('서버 응답 상태:', response.status);
+        if (!response.ok) {
+            return response.json().catch(() => ({})).then(errorBody => {
+                throw new Error(errorBody.message || `서버 응답 오류: ${response.status}`);
+            });
+        }
         return response.json();
     })
     .then(result => {

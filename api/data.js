@@ -1,19 +1,4 @@
-import { createClient } from 'redis';
-
-// Redis 클라이언트 생성 (Serverless 환경용 - 매 요청마다 새 연결)
-const getRedisClient = async () => {
-    const client = createClient({
-        url: process.env.REDIS_URL,
-        socket: {
-            connectTimeout: 5000,
-            reconnectStrategy: false
-        }
-    });
-    
-    client.on('error', (err) => console.log('Redis Client Error', err));
-    await client.connect();
-    return client;
-};
+import { getDataStore, getStoreDiagnostics, parseStoredJson } from '../lib/dataStore.js';
 
 // 데이터 키 상수
 const GAME_DATA_KEY = 'terraforming_mars_data';
@@ -39,20 +24,19 @@ export default async function handler(req, res) {
         return;
     }
     
-    let client;
+    let store;
     try {
-        client = await getRedisClient();
+        store = await getDataStore();
         
         if (req.method === 'GET') {
             // 데이터 조회
-            const gameDataStr = await client.get(GAME_DATA_KEY);
-            const rawGameData = gameDataStr ? JSON.parse(gameDataStr) : defaultGameData;
+            const rawGameData = parseStoredJson(await store.get(GAME_DATA_KEY), defaultGameData);
             const gameData = {
                 ...defaultGameData,
                 ...rawGameData,
                 selectedColonies: Array.isArray(rawGameData?.selectedColonies) ? rawGameData.selectedColonies : []
             };
-            const lastUpdated = await client.get(LAST_UPDATED_KEY) || new Date().toISOString();
+            const lastUpdated = await store.get(LAST_UPDATED_KEY) || new Date().toISOString();
             
             console.log(`데이터 조회: ${gameData.players?.length || 0}명 플레이어, ${gameData.games?.length || 0}개 게임`);
             
@@ -63,7 +47,7 @@ export default async function handler(req, res) {
             
         } else if (req.method === 'POST') {
             // 데이터 업데이트
-            const newData = req.body;
+            const newData = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
             const timestamp = new Date().toISOString();
             
             // 데이터 검증
@@ -96,8 +80,8 @@ export default async function handler(req, res) {
                 selectedColonies: Array.isArray(newData.selectedColonies) ? newData.selectedColonies : []
             };
             
-            await client.set(GAME_DATA_KEY, JSON.stringify(dataToSave));
-            await client.set(LAST_UPDATED_KEY, timestamp);
+            await store.set(GAME_DATA_KEY, JSON.stringify(dataToSave));
+            await store.set(LAST_UPDATED_KEY, timestamp);
             
             console.log(`데이터 저장 완료: ${newData.players.length}명 플레이어, ${newData.games.length}개 게임`);
             
@@ -124,11 +108,12 @@ export default async function handler(req, res) {
             success: false,
             message: '서버 오류가 발생했습니다.',
             error: error.message,
-            hasRedisUrl: !!process.env.REDIS_URL
+            code: error.code,
+            store: getStoreDiagnostics()
         });
     } finally {
-        if (client) {
-            await client.quit().catch(() => {});
+        if (store) {
+            await store.close();
         }
     }
 }

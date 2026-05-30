@@ -230,7 +230,14 @@ TerraformingMarsTracker.prototype.syncToServerAndWait = function(type) {
         },
         body: JSON.stringify(fullData)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            return response.json().catch(() => ({})).then(errorBody => {
+                throw new Error(errorBody.message || `서버 응답 오류: ${response.status}`);
+            });
+        }
+        return response.json();
+    })
     .then(result => {
         console.log('서버 동기화 완료:', result);
         

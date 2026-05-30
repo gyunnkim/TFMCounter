@@ -1,19 +1,4 @@
-import { createClient } from 'redis';
-
-// Redis 클라이언트 생성 (Serverless 환경용 - 매 요청마다 새 연결)
-const getRedisClient = async () => {
-    const client = createClient({
-        url: process.env.REDIS_URL,
-        socket: {
-            connectTimeout: 5000,
-            reconnectStrategy: false
-        }
-    });
-    
-    client.on('error', (err) => console.log('Redis Client Error', err));
-    await client.connect();
-    return client;
-};
+import { getDataStore, getStoreDiagnostics, parseStoredJson } from '../lib/dataStore.js';
 
 const LAST_UPDATED_KEY = 'terraforming_mars_last_updated';
 const GAME_DATA_KEY = 'terraforming_mars_data';
@@ -31,21 +16,23 @@ export default async function handler(req, res) {
     }
     
     if (req.method === 'GET') {
-        let client;
+        let store;
         try {
-            client = await getRedisClient();
+            store = await getDataStore();
             const { timestamp } = req.query;
-            const lastUpdated = await client.get(LAST_UPDATED_KEY);
+            const lastUpdated = await store.get(LAST_UPDATED_KEY);
             
             // 타임스탬프 비교하여 업데이트 필요 여부 확인
             const needsUpdate = !timestamp || timestamp !== lastUpdated;
             
             let data = null;
             if (needsUpdate) {
-                const gameDataStr = await client.get(GAME_DATA_KEY);
-                if (gameDataStr) {
-                    data = JSON.parse(gameDataStr);
-                    data.lastUpdated = lastUpdated;
+                const storedData = await store.get(GAME_DATA_KEY);
+                if (storedData) {
+                    data = parseStoredJson(storedData);
+                    if (data) {
+                        data.lastUpdated = lastUpdated;
+                    }
                 }
             }
             
@@ -61,11 +48,13 @@ export default async function handler(req, res) {
             res.status(500).json({
                 success: false,
                 message: '동기화 체크 중 오류가 발생했습니다.',
-                error: error.message
+                error: error.message,
+                code: error.code,
+                store: getStoreDiagnostics()
             });
         } finally {
-            if (client) {
-                await client.quit().catch(() => {});
+            if (store) {
+                await store.close();
             }
         }
     } else {

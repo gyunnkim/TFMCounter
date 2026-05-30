@@ -1,19 +1,4 @@
-import { createClient } from 'redis';
-
-// Redis 클라이언트 생성 (Serverless 환경용 - 매 요청마다 새 연결)
-const getRedisClient = async () => {
-    const client = createClient({
-        url: process.env.REDIS_URL,
-        socket: {
-            connectTimeout: 5000,
-            reconnectStrategy: false
-        }
-    });
-    
-    client.on('error', (err) => console.log('Redis Client Error', err));
-    await client.connect();
-    return client;
-};
+import { getDataStore, getStoreDiagnostics, parseStoredJson } from '../lib/dataStore.js';
 
 const GAME_DATA_KEY = 'terraforming_mars_data';
 
@@ -29,11 +14,10 @@ export default async function handler(req, res) {
     }
     
     if (req.method === 'GET') {
-        let client;
+        let store;
         try {
-            client = await getRedisClient();
-            const gameDataStr = await client.get(GAME_DATA_KEY);
-            const gameData = gameDataStr ? JSON.parse(gameDataStr) : { players: [], games: [] };
+            store = await getDataStore();
+            const gameData = parseStoredJson(await store.get(GAME_DATA_KEY), { players: [], games: [] });
             
             // 내보내기용 데이터 생성
             const exportData = {
@@ -53,11 +37,14 @@ export default async function handler(req, res) {
             console.error('Export error:', error);
             res.status(500).json({
                 success: false,
-                message: '데이터 내보내기 중 오류가 발생했습니다.'
+                message: '데이터 내보내기 중 오류가 발생했습니다.',
+                error: error.message,
+                code: error.code,
+                store: getStoreDiagnostics()
             });
         } finally {
-            if (client) {
-                await client.quit().catch(() => {});
+            if (store) {
+                await store.close();
             }
         }
     } else {

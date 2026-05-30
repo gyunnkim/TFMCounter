@@ -178,6 +178,7 @@ python3 sync_server.py
 - **데이터가 사라졌을 때**: `data/backups/` 폴더에서 최근 백업 파일 확인
 - **점수 입력 오류**: 음수나 비정상적인 값은 자동으로 검증됩니다
 - **브라우저 호환성**: 모던 브라우저(Chrome, Firefox, Safari, Edge)에서 최적화되어 있습니다
+- **Vercel 데이터 저장 실패**: Vercel 프로젝트 환경변수에 `REDIS_URL`, `KV_URL` 또는 Vercel KV의 `KV_REST_API_URL`, `KV_REST_API_TOKEN`이 설정되어 있는지 확인하세요
 - **동기화 문제**: 서버가 실행 중인지 확인하고 네트워크 연결 상태 점검
 
 ---
